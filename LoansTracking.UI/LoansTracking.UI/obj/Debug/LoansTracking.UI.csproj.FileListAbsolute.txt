@@ -28,6 +28,5 @@ C:\Code\LoansTracking\LoansTracking.UI\LoansTracking.UI\bin\Microsoft.AI.Web.xml
 C:\Code\LoansTracking\LoansTracking.UI\LoansTracking.UI\bin\Microsoft.AI.WindowsServer.xml
 C:\Code\LoansTracking\LoansTracking.UI\LoansTracking.UI\bin\Microsoft.ApplicationInsights.xml
 C:\Code\LoansTracking\LoansTracking.UI\LoansTracking.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Code\LoansTracking\LoansTracking.UI\LoansTracking.UI\obj\Debug\LoansTracking.UI.csprojResolveAssemblyReference.cache
 C:\Code\LoansTracking\LoansTracking.UI\LoansTracking.UI\obj\Debug\LoansTracking.UI.dll
 C:\Code\LoansTracking\LoansTracking.UI\LoansTracking.UI\obj\Debug\LoansTracking.UI.pdb
