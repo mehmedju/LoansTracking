@@ -18,6 +18,10 @@ app.config(['$routeProvider', function ($routeProvider) {
           templateUrl: 'Scripts/angular-app/js/profile/profile.html',
             controller: 'profileController'
         }).
+    when('/login', {
+        templateUrl: 'Scripts/angular-app/js/login/login.html',
+        controller: 'loginController'
+    }).
       otherwise({
           redirectTo: '/notes'
       });

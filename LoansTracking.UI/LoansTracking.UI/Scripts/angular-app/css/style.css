@@ -129,6 +129,20 @@ body{
 	margin: 0 4px 0 15px;
 }
 
+.login-area{
+	margin: 50px 50px 50px 50px;
+}
+
+.button-area {
+	margin-top:20px;
+}
+
+.center {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 
 /*	Making the header responsive. Remove these styles, if
 	you don't need the header to work on mobile devices. */
@@ -190,4 +204,6 @@ body{
 	.header-two-bars .header-second-bar nav i.fa{
 		margin-left:0;
 	}
+
+
 }
