@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoansTracking.UI", "LoansTracking.UI\LoansTracking.UI.csproj", "{80D5D6E8-F7BD-4A8C-ADD2-9E43C1A71E20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoansTrackingApi", "LoansTrackingApi\LoansTrackingApi.csproj", "{1D2A1B0D-A203-40B0-9F07-10432971976F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoansTracking.WebApi", "LoansTracking.WebApi\LoansTracking.WebApi.csproj", "{1D2A1B0D-A203-40B0-9F07-10432971976F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoansDbs", "LoansDbs\LoansDbs.csproj", "{31C5FFB0-36EA-4EAD-BF99-FC840E1C0F2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoansTracking.DB", "LoansTracking.DB\LoansTracking.DB.csproj", "{31C5FFB0-36EA-4EAD-BF99-FC840E1C0F2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

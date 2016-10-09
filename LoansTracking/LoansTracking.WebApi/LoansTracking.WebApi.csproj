@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LoansTrackingApi</RootNamespace>
-    <AssemblyName>LoansTrackingApi</AssemblyName>
+    <RootNamespace>LoansTracking.WebApi</RootNamespace>
+    <AssemblyName>LoansTracking.WebApi</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -209,9 +209,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LoansDbs\LoansDbs.csproj">
+    <ProjectReference Include="..\LoansTracking.DB\LoansTracking.DB.csproj">
       <Project>{31C5FFB0-36EA-4EAD-BF99-FC840E1C0F2D}</Project>
-      <Name>LoansDbs</Name>
+      <Name>LoansTracking.DB</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
