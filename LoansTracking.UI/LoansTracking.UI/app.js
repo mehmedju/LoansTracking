@@ -12,17 +12,17 @@ app.config(['$routeProvider', function ($routeProvider) {
       }).
       when('/notes', {
           templateUrl: 'Scripts/angular-app/js/notes/notes.html',
-            controller: 'notesController'
-        }).
+          controller: 'notesController'
+      }).
       when('/profile', {
           templateUrl: 'Scripts/angular-app/js/profile/profile.html',
-            controller: 'profileController'
-        }).
-    when('/login', {
-        templateUrl: 'Scripts/angular-app/js/login/login.html',
-        controller: 'loginController'
-    }).
+          controller: 'profileController'
+      }).
+      when('/login', {
+          templateUrl: 'Scripts/angular-app/js/login/login.html',
+          controller: 'loginController'
+      }).
       otherwise({
-          redirectTo: '/notes'
+          redirectTo: '/login'
       });
 }]);
