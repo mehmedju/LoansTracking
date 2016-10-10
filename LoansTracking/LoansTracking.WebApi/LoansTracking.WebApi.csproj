@@ -209,8 +209,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LoansTracking.DB\LoansTracking.DB.csproj">
-      <Project>{31C5FFB0-36EA-4EAD-BF99-FC840E1C0F2D}</Project>
+    <ProjectReference Include="..\LoansDbs\LoansTracking.DB.csproj">
+      <Project>{31c5ffb0-36ea-4ead-bf99-fc840e1c0f2d}</Project>
       <Name>LoansTracking.DB</Name>
     </ProjectReference>
   </ItemGroup>
