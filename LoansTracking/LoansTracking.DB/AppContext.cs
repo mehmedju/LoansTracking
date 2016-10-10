@@ -1,9 +1,14 @@
-﻿using System.Data.Entity;
-using LoansTracking.DB.Entities;
+﻿using LoansTracking.DB.Entities;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LoansTracking.DB
 {
-    public class AppContext: DbContext
+    public class AppContext : DbContext
     {
         public AppContext() : base("LoansContext") { }
 

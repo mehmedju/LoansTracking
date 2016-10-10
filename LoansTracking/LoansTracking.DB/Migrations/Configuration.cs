@@ -1,15 +1,18 @@
-using System.Data.Entity.Migrations;
-
 namespace LoansTracking.DB.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<AppContext>
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<LoansTracking.DB.AppContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(AppContext context)
+        protected override void Seed(LoansTracking.DB.AppContext context)
         {
             //  This method will be called after migrating to the latest version.
 
