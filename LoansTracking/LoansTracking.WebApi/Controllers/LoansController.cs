@@ -1,14 +1,11 @@
-﻿using LoansDbs.DataAccess;
-using LoansDbs.Entities;
-using LoansTrackingApi.Models;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using LoansTracking.DB.Entities;
+using LoansTracking.DB.DataAccess;
+using LoansTracking.WebApi.Models;
 
-namespace LoansTrackingApi.Controllers
+namespace LoansTracking.WebApi.Controllers
 {
     public class LoansController : BaseController<Loan>
     {

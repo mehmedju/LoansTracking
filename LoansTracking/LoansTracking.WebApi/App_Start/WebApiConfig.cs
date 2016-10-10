@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json.Serialization;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Http.Cors;
+using Newtonsoft.Json.Serialization;
 
-namespace LoansTrackingApi
+namespace LoansTracking.WebApi
 {
     public static class WebApiConfig
     {

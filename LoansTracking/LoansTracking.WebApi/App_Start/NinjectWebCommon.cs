@@ -1,20 +1,20 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(LoansTrackingApi.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(LoansTrackingApi.App_Start.NinjectWebCommon), "Stop")]
+using System;
+using System.Data.Entity;
+using System.Web;
+using System.Web.Http;
+using LoansTracking.DB;
+using LoansTracking.DB.DataAccess;
+using LoansTracking.WebApi;
+using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+using Ninject;
+using Ninject.Web.Common;
+using WebApiContrib.IoC.Ninject;
 
-namespace LoansTrackingApi.App_Start
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
+
+namespace LoansTracking.WebApi
 {
-    using System;
-    using System.Web;
-
-    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
-    using Ninject;
-    using System.Web.Http;
-    using WebApiContrib.IoC.Ninject;
-    using System.Data.Entity;
-    using LoansDbs.DataAccess;
-    using LoansDbs;
-    using Ninject.Web.Common;
     public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();

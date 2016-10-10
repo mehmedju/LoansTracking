@@ -1,10 +1,6 @@
-﻿using LoansDbs.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using LoansTracking.DB.Entities;
 
-namespace LoansTrackingApi.Models
+namespace LoansTracking.WebApi.Models
 {
     public class ModelFactory
     {
