@@ -10,6 +10,7 @@ namespace LoansTracking.DB
 {
     public class AppContext : DbContext
     {
+        //try
         public AppContext() : base("LoansContext") { }
 
         public DbSet<Loan> Loans { get; set; }

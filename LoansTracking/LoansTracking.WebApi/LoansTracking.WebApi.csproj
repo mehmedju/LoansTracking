@@ -210,7 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LoansTracking.DB\LoansTracking.DB.csproj">
-      <Project>{91a975fe-45f4-447b-9e3b-f669927aad22}</Project>
+      <Project>{d55ebe69-c1af-4c24-8a42-750f780a9c0a}</Project>
       <Name>LoansTracking.DB</Name>
     </ProjectReference>
   </ItemGroup>
