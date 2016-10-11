@@ -50,8 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppContext.cs" />
-    <Compile Include="Interface.cs" />
-    <Compile Include="Repository.cs" />
+    <Compile Include="DataAccess\Interface.cs" />
+    <Compile Include="DataAccess\Repository.cs" />
     <Compile Include="Entities\Loan.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
