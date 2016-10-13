@@ -22,6 +22,10 @@ app.config(['$routeProvider', function ($routeProvider) {
           templateUrl: 'Scripts/angular-app/js/login/login.html',
           controller: 'loginController'
       }).
+      when('/signup', {
+          templateUrl: 'Scripts/angular-app/js/signup/signup.html',
+          controller: 'signupController'
+      }).
       otherwise({
           redirectTo: '/login'
       });
