@@ -212,8 +212,37 @@ body{
 
 .container.loans{
     padding-top: 20px;
-    margin: 20px 0px;
+    margin: 20px auto;
     background-color: #fff;
+}
+
+.btn-edit, .btn-delete{
+    padding: 0px;
+    margin: 0px auto;
+    display: block;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    background-color: transparent;
+}
+
+td.uib-day button.active{
+    background-color: #ccc !important;
+}
+
+.btn-edit{
+    color: #009688;
+}
+
+.btn-delete{
+    color: #f44336;
+}
+
+.th-center {
+    text-align: center !important;
 }
 
 .loansContent{

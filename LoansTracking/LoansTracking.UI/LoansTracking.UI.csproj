@@ -102,9 +102,13 @@
     <Content Include="Scripts\angular-app\css\ui-bootstrap-csp.css" />
     <Content Include="Scripts\angular-app\js\loans\loans.html" />
     <Content Include="Scripts\angular-app\js\loans\loansController.js" />
-    <Content Include="Scripts\angular-app\js\loans\partialAddMode.html" />
-    <Content Include="Scripts\angular-app\js\loans\partialAddPayment.html" />
-    <Content Include="Scripts\angular-app\js\loans\partialEditMode.html" />
+    <Content Include="Scripts\angular-app\js\loans\partials\addModeController.js" />
+    <Content Include="Scripts\angular-app\js\loans\partials\addPaymentController.js" />
+    <Content Include="Scripts\angular-app\js\loans\partials\editModeController.js" />
+    <Content Include="Scripts\angular-app\js\loans\partials\partialAddMode.html" />
+    <Content Include="Scripts\angular-app\js\loans\partials\partialAddPayment.html" />
+    <Content Include="Scripts\angular-app\js\loans\partials\partialEditMode.html" />
+    <Content Include="Scripts\angular-app\js\loans\allPaymentsModalController.js" />
     <Content Include="Scripts\lib\angular-route.min.js.map" />
     <Content Include="Scripts\lib\angular.min.js.map" />
     <Content Include="Scripts\lib\ui-bootstrap-tpls.js" />

@@ -8,10 +8,10 @@
     <input type="text" class="form-control" id="surname" value="Smith">
 </div>
 <button type="button" class="btn btn-default btn-raised">Add new payment</button><br />
-<button type="button" class="btn btn-primary btn-raised" ng-click="openModal()">All payments</button>
+<button type="button" class="btn btn-primary btn-raised" ng-click="openAllPaymentsModal()">All payments</button>
 <p class="input-group">
     <label for="dueDate">Due date:</label>
-    <input type="text" class="form-control loan-due-date" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="datepicker1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+    <input type="text" class="form-control loan-due-date" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="datepicker1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
     <span class="input-group-btn dp-btn">
         <button type="button" class="btn btn-default btn-raised" ng-click="openDatepicker1()"><i class="glyphicon glyphicon-calendar"></i></button>
     </span>

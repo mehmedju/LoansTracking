@@ -1,14 +1,31 @@
 ﻿<!-- TODO: Add logic for modal in controller -->
-<script type="text/ng-template" id="myModalContent.html">
+<script type="text/ng-template" id="allPaymentsModalContent.html">
     <div class="modal-header">
-        <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+        <h3 class="modal-title" id="modal-title">Modal - All payments</h3>
     </div>
     <div class="modal-body" id="modal-body">
-        Random content
+        <table class="custom-responsive-table loans-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th class="th-center">Edit</th>
+                    <th class="th-center">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="n in [].constructor(5) track by $index" class="{{$even ? 'success' : 'info'}}">
+                    <td>26.11.2016</td>
+                    <td>300</td>
+                    <td class="td-center"><button type="button" class="btn-edit"><i class="glyphicon glyphicon-pencil"></i></button></td>
+                    <td class="td-center"><button type="button" class="btn-delete"><i class="glyphicon glyphicon-remove"></i></button></td>                    
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="closeModal()">OK</button>
-        <button class="btn btn-warning" type="button" ng-click="closeModal()">Cancel</button>
+        <button class="btn btn-primary" type="button" ng-click="closeAllPaymentsModal()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="closeAllPaymentsModal()">Cancel</button>
     </div>
 </script>
 
@@ -49,7 +66,7 @@
                 <input type="text" class="form-control" id="surname" placeholder="Enter a surname">
             </div>
             <button type="button" class="btn btn-default btn-raised">Add new payment</button><br />
-            <button type="button" class="btn btn-primary btn-raised" ng-click="openModal()">All payments</button>
+            <button type="button" class="btn btn-primary btn-raised" ng-click="openAllPaymentsModal()">All payments</button>
             <div class="form-group">
                 <label for="amount">Amount:</label>
                 <input type="text" class="form-control" id="amount" placeholder="Enter an amount">
@@ -63,7 +80,7 @@
             </p><br />
             <p class="input-group">
                 <label for="dueDate">Due date:</label>
-                <input type="text" class="form-control loan-due-date" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="datepicker2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                <input type="text" class="form-control loan-due-date" uib-datepicker-popup="{{format}}" ng-model="dt2" is-open="datepicker2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                 <span class="input-group-btn dp-btn">
                     <button type="button" class="btn btn-default btn-raised" ng-click="openDatepicker2()"><i class="glyphicon glyphicon-calendar"></i></button>
                 </span>
