@@ -15,7 +15,7 @@ namespace LoansTracking.DB.Migrations
 
         protected override void Seed(AppContext context)
         {
-            //  When you do your first update of the Db uncomment this code 
+            //  When you do your first update of the Db uncomment the code below
 
             //context.People.AddOrUpdate(
             //  p => p.Id,
@@ -30,7 +30,7 @@ namespace LoansTracking.DB.Migrations
             //);
             //context.SaveChanges();
             //context.Payements.AddOrUpdate(
-            // l => l.Id,
+            //x => x.Id,
             // new Payment { AmountPaid = 100, Date = DateTime.Now, Loan = context.Loans.Find(1) },
             // new Payment { AmountPaid = 100, Date = DateTime.Now, Loan = context.Loans.Find(1) },
             // new Payment { AmountPaid = 100, Date = DateTime.Now, Loan = context.Loans.Find(1) },
@@ -45,6 +45,13 @@ namespace LoansTracking.DB.Migrations
             // new Payment { AmountPaid = 30, Date = DateTime.Now, Loan = context.Loans.Find(2) },
             // new Payment { AmountPaid = 10, Date = DateTime.Now, Loan = context.Loans.Find(2) }
             //);
+
+            //context.Notes.AddOrUpdate(
+            // n => n.Id,
+            // new Note { Text = "This is the first Note", Title = "First Note" },
+            // new Note { Text = "And this is the second one", Title = "Second Note" },
+
+
         }
     }
 }

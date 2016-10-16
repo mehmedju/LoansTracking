@@ -19,6 +19,7 @@ namespace LoansTracking.WebApi.Models
             };
         }
 
+
         public Person Create(PersonModel model, AppContext context)
         {
             return new Person()
@@ -41,5 +42,16 @@ namespace LoansTracking.WebApi.Models
             payment.Loan = new Repository<Loan>(context).Get().Where(x => x.Person.Id == model.PaidById).FirstOrDefault();
             return payment;
         }
+
+        public Note Create(NoteModel model, AppContext context)
+        {
+            return new Note()
+            {
+                Id = model.Id,
+                Title = model.Title,
+                Text = model.Text
+            };
+        }
+
     }
 }

@@ -1,9 +1,21 @@
 (angular.module('app')
     .controller('loginController', ['$scope', '$location', function ($scope, $location) {
         'use strict';
-        function goToSignup() {
-            $location.path('/signup')
+
+        angular.extend($scope, {
+            showErrorMessage: false
+        });
+
+        $scope.goToSignup = function () {
+            $location.path('/signup');
         }
-        $scope.goToSignup = goToSignup;
+
+        $scope.login = function () {
+            if ($scope.user.username === "admin" && $scope.user.password === "password") {
+                $location.path('/loans');
+            } else {
+                $scope.showErrorMessage = true;
+            }
+        }
     }
     ]));

@@ -56,5 +56,15 @@ namespace LoansTracking.WebApi.Models
                 LastName = entity.LastName,
             };
         }
+
+        public NoteModel Create(Note entity)
+        {
+            return new NoteModel()
+            {
+                Id = entity.Id,
+                Title = entity.Title,
+                Text = entity.Text
+            };
+        }
     }
 }
