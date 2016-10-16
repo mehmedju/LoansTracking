@@ -15,5 +15,15 @@ namespace LoansTracking.WebApi.Models
                 DueDate = entity.DueDate
             };
         }
+
+        public NoteModel Create(Note entity)
+        {
+            return new NoteModel()
+            {
+                Id = entity.Id,
+                Title = entity.Title,
+                Text = entity.Text
+            };
+        }
     }
 }
