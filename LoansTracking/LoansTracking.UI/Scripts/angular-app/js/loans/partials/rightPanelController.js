@@ -2,8 +2,8 @@
     .controller('rightPanelController', ['$scope', '$uibModal', function ($scope, $uibModal) {
         'use strict';
         $scope.openAllPaymentsModal = function () {
-            var modalInstance = $uibModal.open({
-                templateUrl: 'allPaymentsModalContent.html',
+            $uibModal.open({
+                templateUrl: 'Scripts/angular-app/js/loans/partials/allPaymentsModal.html',
                 controller: 'allPaymentsModalController'
             });
         };

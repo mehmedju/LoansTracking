@@ -1,25 +1,24 @@
-﻿<!-- TODO: Add logic for modal in controller -->
-<div data-ng-include="'Scripts/angular-app/views/header.html'"></div>
+﻿<div data-ng-include="'Scripts/angular-app/views/header.html'"></div>
 <div class="container loans">
     <div class="row">
-        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 loansContent">
-            <button type="button" class="btn btn-default btn-raised pull-right add-loan-btn">Add new loan</button>
-            <table class="custom-responsive-table loans-table">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <button type="button" class="btn btn-primary btn-raised pull-right add-loan-btn">Add new loan</button>
+            <table class="custom-responsive-table table-striped">
                 <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Surname</th>
-                    <th>Status</th>
-                    <th>Due date</th>
-                </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Status</th>
+                        <th>Due date</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="n in [].constructor(17) track by $index" class="{{$even ? 'success' : 'info'}}">
-                    <td>James</td>
-                    <td>Matman</td>
-                    <td>-5900</td>
-                    <td>27.11.2017</td>
-                </tr>
+                    <tr ng-repeat="n in [].constructor(5) track by $index" class="{{$even ? 'success' : 'info'}}">
+                        <td>James</td>
+                        <td>Matman</td>
+                        <td>-5900</td>
+                        <td>27.11.2017</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -1,146 +1,142 @@
 ﻿@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
-html{
-	background-color: #eaf0f2;
+body {
+    font: 14px/1.5 Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
-body{
-	font:14px/1.5 Arial, Helvetica, sans-serif;
-	padding:0;
-	margin:0;
+.header-two-bars {
+    font: 13px Arial, Helvetica, sans-serif;
 }
 
-.header-two-bars{
-	font:13px Arial, Helvetica, sans-serif;
-}
+    .header-two-bars .header-limiter {
+        max-width: 1200px;
+        text-align: center;
+        margin: 0 auto;
+    }
 
-.header-two-bars .header-limiter{
-	max-width: 1200px;
-	text-align: center;
-	margin: 0 auto;
-}
+    /* Logo */
 
-/* Logo */
+    .header-two-bars h1 {
+        float: left;
+        font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+        line-height: 40px;
+        margin: 0;
+    }
 
-.header-two-bars h1{
-	float: left;
-	font: normal 28px Cookie, Arial, Helvetica, sans-serif;
-	line-height: 40px;
-	margin: 0;
-}
+        .header-two-bars h1 span {
+            color: #bc40df;
+        }
 
-.header-two-bars h1 span {
-	color: #bc40df;
-}
+    /* The first bar */
 
-/* The first bar */
+    .header-two-bars .header-first-bar {
+        background-color: #292c2f;
+        box-shadow: 0 1px 1px #ccc;
+        padding: 20px 40px;
+        height: 80px;
+        color: #ffffff;
+        box-sizing: border-box;
+    }
 
-.header-two-bars .header-first-bar{
-	background-color:#292c2f;
-	box-shadow:0 1px 1px #ccc;
-	padding: 20px 40px;
-	height: 80px;
-	color: #ffffff;
-	box-sizing: border-box;
-}
+        .header-two-bars .header-first-bar a {
+            color: #ffffff;
+            text-decoration: none;
+        }
 
-.header-two-bars .header-first-bar a {
-	color: #ffffff;
-	text-decoration: none;
-}
+        .header-two-bars .header-first-bar nav {
+            font: 14px Arial, Helvetica, sans-serif;
+            line-height: 40px;
+            float: left;
+            margin: 0 0 0 60px;
+            padding: 0;
+        }
 
-.header-two-bars .header-first-bar nav {
-	font:14px Arial, Helvetica, sans-serif;
-	line-height: 40px;
-	float: left;
-	margin: 0 0 0 60px;
-	padding: 0;
-}
+            .header-two-bars .header-first-bar nav a {
+                display: inline-block;
+                padding: 0 5px;
+                opacity: 0.9;
+                text-decoration: none;
+                line-height: 1;
+            }
 
-.header-two-bars .header-first-bar nav a{
-	display: inline-block;
-	padding: 0 5px;
-	opacity: 0.9;
-	text-decoration:none;
-	line-height: 1;
-}
+                .header-two-bars .header-first-bar nav a:hover {
+                    opacity: 1;
+                }
 
-.header-two-bars .header-first-bar nav a:hover {
-	opacity: 1;
-}
+                .header-two-bars .header-first-bar nav a.selected {
+                    border-radius: 2px;
+                    background-color: #2B5773;
+                    padding: 8px 12px;
+                }
 
-.header-two-bars .header-first-bar nav a.selected {
-	border-radius: 2px;
-	background-color: #2B5773;
-	padding: 8px 12px;
-}
-
-.header-two-bars .header-first-bar a.logout-button {
-	font-size: 13px;
-	font-weight: bold;
-	float: right;
-	border-radius: 3px;
-	background-color: rgba(58, 60, 62, 0);
-	height: 40px;
-	padding: 0 20px;
-	border: 1px solid #5E6367;
-	line-height: 40px;
-	box-sizing: border-box;
-}
+        .header-two-bars .header-first-bar a.logout-button {
+            font-size: 13px;
+            font-weight: bold;
+            float: right;
+            border-radius: 3px;
+            background-color: rgba(58, 60, 62, 0);
+            height: 40px;
+            padding: 0 20px;
+            border: 1px solid #5E6367;
+            line-height: 40px;
+            box-sizing: border-box;
+        }
 
 
-/* Second Bar */
+    /* Second Bar */
 
-.header-two-bars .header-second-bar {
-	background-color: #ffffff;
-	box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, 0.05);
-	padding: 20px 40px;
-}
+    .header-two-bars .header-second-bar {
+        background-color: #ffffff;
+        box-shadow: 1px 3px 3px 0 rgba(0, 0, 0, 0.05);
+        padding: 20px 40px;
+    }
 
-.header-two-bars .header-second-bar h2 {
-	line-height: 20px;
-	margin: 0;
-	float: left;
-}
+        .header-two-bars .header-second-bar h2 {
+            line-height: 20px;
+            margin: 0;
+            float: left;
+        }
 
-.header-two-bars .header-second-bar h2 a {
-	font-size: 16px;
-	color: #4e5359;
-	text-decoration: none;
-}
+            .header-two-bars .header-second-bar h2 a {
+                font-size: 16px;
+                color: #4e5359;
+                text-decoration: none;
+            }
 
-.header-two-bars .header-second-bar nav {
-	text-align: right;
-	line-height: 20px;
-	font-size: 16px;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
-}
+        .header-two-bars .header-second-bar nav {
+            text-align: right;
+            line-height: 20px;
+            font-size: 16px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
 
-.header-two-bars .header-second-bar nav a {
-	display: inline-block;
-	color: #4e5359;
-	text-decoration: none;
-}
+            .header-two-bars .header-second-bar nav a {
+                display: inline-block;
+                color: #4e5359;
+                text-decoration: none;
+            }
 
-.header-two-bars .header-second-bar nav i.fa {
-	color: #A9B7BF;
-	margin: 0 4px 0 15px;
-}
+            .header-two-bars .header-second-bar nav i.fa {
+                color: #A9B7BF;
+                margin: 0 4px 0 15px;
+            }
 
-.login-area{
-	margin: 50px 50px 50px 50px;
+.login-area {
+    margin: 50px 50px 50px 50px;
 }
 
 .button-area {
-	margin-top:20px;
+    margin-top: 20px;
 }
 
 .center {
-	float: none;
-	margin-left: auto;
-	margin-right: auto;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -149,74 +145,71 @@ body{
 
 @media all and (max-width: 800px) {
 
-	.header-two-bars .header-second-bar nav{
-		font-size:14px;
-	}
-
+    .header-two-bars .header-second-bar nav {
+        font-size: 14px;
+    }
 }
 
 @media all and (max-width: 600px) {
 
-	.header-two-bars .header-first-bar{
-		padding:20px 0;
-	}
+    .header-two-bars .header-first-bar {
+        padding: 20px 0;
+    }
 
-	.header-two-bars .header-first-bar h1 {
-		float: none;
-		margin: -8px 0 2px;
-		text-align: center;
-		font-size: 24px;
-		line-height: 1;
-	}
+        .header-two-bars .header-first-bar h1 {
+            float: none;
+            margin: -8px 0 2px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 1;
+        }
 
-	.header-two-bars .header-first-bar nav {
-		margin: 0;
-		float: none;
-		font-size:13px;
-	}
+        .header-two-bars .header-first-bar nav {
+            margin: 0;
+            float: none;
+            font-size: 13px;
+        }
 
-	.header-two-bars .header-first-bar nav a.selected {
-		padding: 5px 8px;
-	}
+            .header-two-bars .header-first-bar nav a.selected {
+                padding: 5px 8px;
+            }
 
-	.header-two-bars .header-first-bar .logout-button {
-		display: none;
-	}
+        .header-two-bars .header-first-bar .logout-button {
+            display: none;
+        }
 
-	.header-two-bars .header-second-bar{
-		padding: 20px 0;
-	}
+    .header-two-bars .header-second-bar {
+        padding: 20px 0;
+    }
 
-	.header-two-bars .header-second-bar h2{
-		float:none;
-		margin: 0 0 12px;
-	}
+        .header-two-bars .header-second-bar h2 {
+            float: none;
+            margin: 0 0 12px;
+        }
 
-	.header-two-bars .header-second-bar nav{
-		text-align: center;
-	}
+        .header-two-bars .header-second-bar nav {
+            text-align: center;
+        }
 
-	.header-two-bars .header-second-bar nav a{
-		display: block;
-		padding: 8px;
-	}
+            .header-two-bars .header-second-bar nav a {
+                display: block;
+                padding: 8px;
+            }
 
-	.header-two-bars .header-second-bar nav i.fa{
-		margin-left:0;
-	}
-
-
+            .header-two-bars .header-second-bar nav i.fa {
+                margin-left: 0;
+            }
 }
 
 /* Loans screen CSS starts */
 
-.container.loans{
+.container.loans {
     padding-top: 20px;
     margin: 20px auto;
     background-color: #fff;
 }
 
-.btn-edit, .btn-delete{
+.btn-edit, .btn-delete {
     padding: 0px;
     margin: 0px auto;
     display: block;
@@ -229,15 +222,15 @@ body{
     background-color: transparent;
 }
 
-td.uib-day button.active{
+td.uib-day button.active {
     background-color: #ccc !important;
 }
 
-.btn-edit{
+.btn-edit {
     color: #009688;
 }
 
-.btn-delete{
+.btn-delete {
     color: #f44336;
 }
 
@@ -245,113 +238,126 @@ td.uib-day button.active{
     text-align: center !important;
 }
 
-.loansContent{
-    border-right: 1px solid black;
-}
-
-.modeTitle{
+.modeTitle {
     font-size: 20px;
     font-weight: bold;
     color: #009688;
 }
 
-.loansModeContent label{
+.loansModeContent label {
     font-size: 12px !important;
 }
 
-.loansModeContent .form-group{
+.loansModeContent .form-group {
     margin-top: 10px !important;
 }
-table.custom-responsive-table { 
-  width: 100%; 
-  border-collapse: collapse;  
+
+.rightPanel {
+    background-color: #eeeeee;
+    padding-top: 10px;
 }
 
-.add-loan-btn{
+table.custom-responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.add-loan-btn {
     margin-bottom: 20px !important;
 }
 
-.all-payments{
+.all-payments {
     font-size: 16px !important;
     line-height: 40px !important;
     font-weight: bold;
 }
 
-.badge.red{
+.badge.red {
     background-color: #f44336 !important;
 }
 
-.loan-due-date:focus
-{
+.loan-due-date:focus {
     outline: none !important;
     border: 0 !important;
     box-shadow: none !important;
 }
 
-.dp-btn{
-    bottom: -15px !important;   
+.dp-btn {
+    bottom: -15px !important;
 }
 
 /* Zebra striping */
-.custom-responsive-table tr:nth-of-type(odd) { 
-  background: #eee; 
-}
-.custom-responsive-table th { 
-  background: #333; 
-  color: white; 
-  font-weight: bold; 
-}
-.custom-responsive-table td, .custom-responsive-table th { 
-  padding: 6px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
+.custom-responsive-table tr:nth-of-type(odd) {
+    background: #eee;
 }
 
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+.custom-responsive-table th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
 
-	/* Force table to not be like tables anymore */
-	table.custom-responsive-table, .custom-responsive-table thead, .custom-responsive-table tbody, .custom-responsive-table th, .custom-responsive-table td, .custom-responsive-table tr { 
-		display: block; 
-	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	.custom-responsive-table thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	.custom-responsive-table tr { border: 1px solid #ccc; }
-	
-	.custom-responsive-table td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
-	}
-	
-	.custom-responsive-table td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-	}
-	
-	/*
+.custom-responsive-table td, .custom-responsive-table th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+
+    /* Force table to not be like tables anymore */
+    table.custom-responsive-table, .custom-responsive-table thead, .custom-responsive-table tbody, .custom-responsive-table th, .custom-responsive-table td, .custom-responsive-table tr {
+        display: block;
+    }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        .custom-responsive-table thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+    .custom-responsive-table tr {
+        border: 1px solid #ccc;
+    }
+
+    .custom-responsive-table td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+        .custom-responsive-table td:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+        }
+
+    /*
 	Label the data
 	*/
-	.custom-responsive-table.loans-table td:nth-of-type(1):before { content: "Name"; }
-	.custom-responsive-table.loans-table td:nth-of-type(2):before { content: "Surname"; }
-	.custom-responsive-table.loans-table td:nth-of-type(3):before { content: "Status"; }
-	.custom-responsive-table.loans-table td:nth-of-type(4):before { content: "Due date"; }
-	
+    .custom-responsive-table.loans-table td:nth-of-type(1):before {
+        content: "Name";
+    }
+
+    .custom-responsive-table.loans-table td:nth-of-type(2):before {
+        content: "Surname";
+    }
+
+    .custom-responsive-table.loans-table td:nth-of-type(3):before {
+        content: "Status";
+    }
+
+    .custom-responsive-table.loans-table td:nth-of-type(4):before {
+        content: "Due date";
+    }
 }
 
 /* Loans screen CSS ends */
