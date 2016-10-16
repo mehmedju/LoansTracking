@@ -103,6 +103,8 @@
     <Content Include="Scripts\angular-app\js\signup\signupController.js" />
     <Content Include="Scripts\lib\angular-route.min.js.map" />
     <Content Include="Scripts\lib\angular.min.js.map" />
+    <Content Include="Scripts\lib\bootstrap.min.js" />
+    <Content Include="Scripts\lib\jquery.min.js" />
     <Content Include="Scripts\lib\underscore.js" />
     <Content Include="Scripts\lib\underscore.min.js" />
     <Content Include="Scripts\lib\underscore.min.map" />
