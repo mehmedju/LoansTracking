@@ -29,7 +29,7 @@ namespace LoansTracking.DB.Migrations
             // new Loan { Amount = 2000, DueDate = DateTime.Now.AddMonths(8), PaidOff = false, Person = context.People.Find(2) }
             //);
             //context.SaveChanges();
-            //context.Payements.AddOrUpdate(
+            //context.Payments.AddOrUpdate(
             //x => x.Id,
             // new Payment { AmountPaid = 100, Date = DateTime.Now, Loan = context.Loans.Find(1) },
             // new Payment { AmountPaid = 100, Date = DateTime.Now, Loan = context.Loans.Find(1) },

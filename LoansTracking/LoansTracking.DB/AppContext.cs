@@ -13,7 +13,7 @@ namespace LoansTracking.DB
         public AppContext() : base("LoansContext") { }
 
         public DbSet<Loan> Loans { get; set; }
-        public DbSet<Payment> Payements { get; set; }
+        public DbSet<Payment> Payments { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<Note> Notes { get; set; }
     }
