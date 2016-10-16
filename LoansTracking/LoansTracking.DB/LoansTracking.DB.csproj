@@ -54,9 +54,9 @@
     <Compile Include="DataAccess\Repository.cs" />
     <Compile Include="Entities\Loan.cs" />
     <Compile Include="Entities\Note.cs" />
-    <Compile Include="Migrations\201610142059249_Migrate DB.cs" />
-    <Compile Include="Migrations\201610142059249_Migrate DB.Designer.cs">
-      <DependentUpon>201610142059249_Migrate DB.cs</DependentUpon>
+    <Compile Include="Migrations\201610161000272_Initial.cs" />
+    <Compile Include="Migrations\201610161000272_Initial.Designer.cs">
+      <DependentUpon>201610161000272_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,8 +66,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610142059249_Migrate DB.resx">
-      <DependentUpon>201610142059249_Migrate DB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610161000272_Initial.resx">
+      <DependentUpon>201610161000272_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
