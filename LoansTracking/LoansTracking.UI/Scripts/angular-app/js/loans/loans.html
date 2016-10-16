@@ -1,3 +1,95 @@
-﻿<div data-ng-include="'Scripts/angular-app/views/header.html'"></div>
+﻿<!-- TODO: Add logic for modal in controller -->
+<script type="text/ng-template" id="allPaymentsModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Modal - All payments</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <table class="custom-responsive-table loans-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th class="th-center">Edit</th>
+                    <th class="th-center">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="n in [].constructor(5) track by $index" class="{{$even ? 'success' : 'info'}}">
+                    <td>26.11.2016</td>
+                    <td>300</td>
+                    <td class="td-center"><button type="button" class="btn-edit"><i class="glyphicon glyphicon-pencil"></i></button></td>
+                    <td class="td-center"><button type="button" class="btn-delete"><i class="glyphicon glyphicon-remove"></i></button></td>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="closeAllPaymentsModal()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="closeAllPaymentsModal()">Cancel</button>
+    </div>
+</script>
 
-This is LOANS screen
+<div data-ng-include="'Scripts/angular-app/views/header.html'"></div>
+<div class="container loans">
+    <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 loansContent">
+            <button type="button" class="btn btn-default btn-raised pull-right add-loan-btn">Add new loan</button>
+            <table class="custom-responsive-table loans-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Status</th>
+                        <th>Due date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="n in [].constructor(30) track by $index" class="{{$even ? 'success' : 'info'}}">
+                        <td>James</td>
+                        <td>Matman</td>
+                        <td>-5900</td>
+                        <td>27.11.2017</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 loansModeContent">
+            <!-- Fulfill this DIV with partialAddMode.html or partialEditMode.html or partialAddPayment.html -->
+        
+            <span class="modeTitle">Add new payment</span>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter a name">
+            </div>
+            <div class="form-group">
+                <label for="surname">Surname:</label>
+                <input type="text" class="form-control" id="surname" placeholder="Enter a surname">
+            </div>
+            <button type="button" class="btn btn-default btn-raised">Add new payment</button><br />
+            <button type="button" class="btn btn-primary btn-raised" ng-click="openAllPaymentsModal()">All payments</button>
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="text" class="form-control" id="amount" placeholder="Enter an amount">
+            </div>
+            <p class="input-group">
+                <label for="dueDate">Date:</label>
+                <input type="text" class="form-control loan-due-date" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="datepicker1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                <span class="input-group-btn dp-btn">
+                    <button type="button" class="btn btn-default btn-raised" ng-click="openDatepicker1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p><br />
+            <p class="input-group">
+                <label for="dueDate">Due date:</label>
+                <input type="text" class="form-control loan-due-date" uib-datepicker-popup="{{format}}" ng-model="dt2" is-open="datepicker2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                <span class="input-group-btn dp-btn">
+                    <button type="button" class="btn btn-default btn-raised" ng-click="openDatepicker2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p><br />
+            Status <span class="badge red">-5999.99 KM</span><br /><br />
+            <button type="button" class="btn btn-info btn-raised">Cancel</button>
+            <button type="button" class="btn btn-primary btn-raised">Save</button>
+            <button type="button" class="btn btn-warning btn-raised">Delete</button>
+        </div>
+    </div>
+</div>
+
