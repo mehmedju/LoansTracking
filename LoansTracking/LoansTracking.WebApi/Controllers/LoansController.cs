@@ -47,10 +47,17 @@ namespace LoansTracking.WebApi.Controllers
         {
             try
             {
-                Loan Loan = Parser.Create(model, Repository.BaseContext());
-                Repository.Insert(Loan);
-                var newLoan =Repository.Get().OrderByDescending(x => x.Id).FirstOrDefault();
-                return Ok(Factory.Create(newLoan));
+                if(Repository.Get().Where(x => x.Person.Id == model.Person).FirstOrDefault() == null)
+                {
+                    Loan Loan = Parser.Create(model, Repository.BaseContext());
+                    Repository.Insert(Loan);
+                    var newLoan = Repository.Get().OrderByDescending(x => x.Id).FirstOrDefault();
+                    return Ok(Factory.Create(newLoan));
+                }
+                else
+                {
+                    return BadRequest("You have already lend money to this person");
+                }
             }
             catch (Exception ex)
             {
@@ -70,7 +77,18 @@ namespace LoansTracking.WebApi.Controllers
                 else
                 {
                     Repository.Update(Parser.Create(model, Repository.BaseContext()), loan.Id);
-                    return Ok(model);
+                    var newLoan = Factory.Create(Repository.Get(model.Id));
+                    if(newLoan.Status <= 0)
+                    {
+                        newLoan.PaidOff = true;
+                        Repository.Update(Parser.Create(newLoan,Repository.BaseContext()), newLoan.Id);
+                    }
+                    else
+                    {
+                        newLoan.PaidOff = false;
+                        Repository.Update(Parser.Create(newLoan, Repository.BaseContext()), newLoan.Id);
+                    }
+                    return Ok(newLoan);
                 }
             }
             catch (Exception ex)

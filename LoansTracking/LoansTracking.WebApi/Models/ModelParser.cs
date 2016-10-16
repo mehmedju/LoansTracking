@@ -1,5 +1,7 @@
 ﻿using LoansTracking.DB;
+using LoansTracking.DB.DataAccess;
 using LoansTracking.DB.Entities;
+using System.Linq;
 
 namespace LoansTracking.WebApi.Models
 {
@@ -10,11 +12,35 @@ namespace LoansTracking.WebApi.Models
             return new Loan()
             {
                 Id = model.Id,
-                Name = model.Name,
-                Surname = model.Surname,
+                Person = context.People.Find(model.Person),
                 Amount = model.Amount,
-                DueDate = model.DueDate
+                DueDate = model.DueDate,
+                PaidOff = model.PaidOff
             };
+        }
+
+
+        public Person Create(PersonModel model, AppContext context)
+        {
+            return new Person()
+            {
+                Id = model.Id,
+                FirstName = model.FirstName,
+                LastName= model.LastName,
+            };
+        }
+
+        public Payment Create(PaymentModel model, AppContext context)
+        {
+            var payment = new Payment()
+            {
+                Id = model.Id,
+                AmountPaid = model.AmountPaid,
+                Date = model.Date,  
+                
+            };
+            payment.Loan = new Repository<Loan>(context).Get().Where(x => x.Person.Id == model.PaidById).FirstOrDefault();
+            return payment;
         }
 
         public Note Create(NoteModel model, AppContext context)
@@ -26,5 +52,6 @@ namespace LoansTracking.WebApi.Models
                 Text = model.Text
             };
         }
+
     }
 }

@@ -11,10 +11,13 @@ namespace LoansTracking.WebApi
             EnableCorsAttribute CorsAttribute = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(CorsAttribute);
 
+            config.MapHttpAttributeRoutes();
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}/{what}",
                 defaults: new { id = RouteParameter.Optional, what = RouteParameter.Optional }
+                
             );
 
             var json = GlobalConfiguration.Configuration;
