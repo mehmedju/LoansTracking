@@ -13,6 +13,9 @@ body {
 }
 
 /*  HEADER   */
+.selectedRoute {
+    background-color: #00caff;
+}
 
 .navigation-clean-button {
   background:#fff;

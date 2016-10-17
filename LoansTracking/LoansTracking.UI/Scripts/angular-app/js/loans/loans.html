@@ -13,12 +13,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="n in [].constructor(5) track by $index" class="{{$even ? 'success' : 'info'}}">
-                        <td>James</td>
-                        <td>Matman</td>
-                        <td>-5900</td>
-                        <td>27.11.2017</td>
-                    </tr>
+                <tr>
+                    <td>James</td>
+                    <td>Matman</td>
+                    <td>-5900</td>
+                    <td>27.11.2017</td>
+                </tr>
+                <tr data-ng-repeat="user in allUsers">
+                    <td>{{user.name}}</td>
+                    <td>{{user.surname}}</td>
+                    <td>{{user.amount}}</td>
+                    <td>{{user.dueDate}}</td>
+                </tr>
                 </tbody>
             </table>
         </div>

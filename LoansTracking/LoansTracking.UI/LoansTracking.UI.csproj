@@ -99,6 +99,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\angular-app\controllers\headerController.js" />
     <Content Include="Scripts\angular-app\css\ui-bootstrap-csp.css" />
     <Content Include="Scripts\angular-app\js\loans\loans.html" />
     <Content Include="Scripts\angular-app\js\loans\loansController.js" />
@@ -154,7 +155,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Scripts\angular-app\controllers\" />
     <Folder Include="Scripts\angular-app\directives\" />
     <Folder Include="Scripts\angular-app\filters\" />
     <Folder Include="Scripts\angular-app\services\" />
