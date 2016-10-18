@@ -6,11 +6,14 @@
             firstName: "Angular",
             lastName: "User",
             dateOfBirth: Date.now(),
+            gender: "male",
             mobileNumber: "033 987 654",
             address: "Milana Preloga 12",
             location: "Sarajevo, BiH",
-            position: "Software developer",
-            company: "Mistral"
+            occupation: "Software developer",
+            company: "Mistral",
+            email: "angular@mistral.com",
+            username: "Mistralko"
         }
     }
 
