@@ -1,55 +1,71 @@
 ﻿<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 loansModeContent rightPanel" data-ng-controller="rightPanelController">
     <span class="modeTitle">{{addMode ? 'Add new loan' : 'Edit loan'}}</span>
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter a name">
-    </div>
-    <div class="form-group">
-        <label for="surname">Surname:</label>
-        <input type="text" class="form-control" id="surname" placeholder="Enter a surname">
-    </div>
-    <div class="form-group" data-ng-show="!addMode">
-        <a href="">Add new payment</a>
-        <a href="" style="float: right;" ng-click="openAllPaymentsModal()">All payments</a>
-    </div>
-    <div class="form-inline" data-ng-show="!addMode">
+    <form novalidate role="form" name="form">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Enter an amount" style="max-width: 150px;">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter a name" required ng-minlength="3" ng-model="loan.name">
+            <span ng-show="form.name.$touched && form.name.$error.required" class="text-danger">Name is required field!</span>
+            <span ng-show="form.name.$touched && form.name.$invalid" class="text-danger">Name must be at least three characters!</span>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="datepicker1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" style="max-width: 100px;" />
+            <label for="surname">Surname:</label>
+            <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter a surname" required ng-minlength="2" ng-model="loan.surname">
+            <span ng-show="form.surname.$touched && form.surname.$error.required" class="text-danger">Surname is required field!</span>
+            <span ng-show="form.surname.$touched && form.surname.$invalid" class="text-danger">Surname must be at least two characters!</span>
+        </div>
+        <div class="form-group" data-ng-show="!addMode">
+            <a href="">Add new payment</a>
+            <a href="" style="float: right;" ng-click="openAllPaymentsModal()">All payments</a>
+        </div>
+        <ng-form novalidate role="form" name="paymentForm">
+                <p ng-show="paymentForm.amount.$touched && paymentForm.amount.$error.required" class="text-danger">Amount is required field!</p>
+                <p ng-show="paymentForm.amount2.$touched && paymentForm.amount2.$error.required" class="text-danger">Amount is required field!</p>
+                <p ng-show="paymentForm.date1.$touched && paymentForm.date1.$error.required" class="text-danger">Payment date 1 is required field!</p>
+                <p ng-show="paymentForm.dueDate.$touched && paymentForm.dueDate.$error.required" class="text-danger">Due Date is required field!</p>
+
+            <div class="form-inline" data-ng-show="!addMode">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter an amount" style="max-width: 150px;" name="amount" required ng-model="payment.amount">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="date1" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="datepicker1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" style="max-width: 100px;" />
+                </div>
+                <div class="form-group">
+                    <span>
+                        <button type="button" class="btn btn-default btn-raised" ng-click="openDatepicker1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+                <div class="form-group" style="float: right; padding-top: 10px;">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true" style="padding-right: 10px;"></span>
+                    <!-- validation is not implemented for this 'button' -->
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-disabled="paymentForm.$invalid"></span>
+                </div>
+            </div>
+            <div class="form-group" data-ng-show="addMode">
+                <label for="amount">Amount:</label>
+                <!-- validation is not implemented for this field -->
+                <input type="text" class="form-control" id="amount" placeholder="Enter an amount" name="amount2" ng-model="pament.amount">
+            </div>
+            <label for="dueDate">Due date:</label>
+            <div class="form-inline">
+                <div class="form-group">
+                    <input type="text" id="dueDate" name="dueDate" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt2" is-open="datepicker2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                </div>
+                <div class="form-group">
+                    <span>
+                        <button type="button" class="btn btn-default btn-raised" ng-click="openDatepicker2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            </div>
+        </ng-form>
+
+        <div class="form-group" data-ng-show="!addMode">
+            <p style="margin: 30px 0 30px 0">Status <span class="badge red">-5999.99 KM</span></p>
         </div>
         <div class="form-group">
-            <span>
-                <button type="button" class="btn btn-default btn-raised" ng-click="openDatepicker1()"><i class="glyphicon glyphicon-calendar"></i></button>
-            </span>
+            <button type="button" class="btn btn-default btn-raised">Cancel</button>
+            <button type="button" class="btn btn-primary btn-raised" ng-disabled="form.$invalid">Save</button>
+            <button type="button" class="btn btn-danger btn-raised" style="float: right">Delete</button>
         </div>
-        <div class="form-group" style="float: right; padding-top: 10px;">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true" style="padding-right: 10px;"></span>
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-        </div>
-    </div>
-    <div class="form-group" data-ng-show="addMode">
-        <label for="amount">Amount:</label>
-        <input type="text" class="form-control" id="amount" placeholder="Enter an amount">
-    </div>
-    <label for="dueDate">Due date:</label>
-    <div class="form-inline">
-        <div class="form-group">
-            <input type="text" id="dueDate" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt2" is-open="datepicker2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"/>
-        </div>
-        <div class="form-group">
-            <span>
-                <button type="button" class="btn btn-default btn-raised" ng-click="openDatepicker2()"><i class="glyphicon glyphicon-calendar"></i></button>
-            </span>
-        </div>
-    </div>
-    <div class="form-group" data-ng-show="!addMode">
-        <p style="margin: 30px 0 30px 0">Status <span class="badge red">-5999.99 KM</span></p>
-    </div>
-    <div class="form-group">
-        <button type="button" class="btn btn-default btn-raised">Cancel</button>
-        <button type="button" class="btn btn-primary btn-raised">Save</button>
-        <button type="button" class="btn btn-danger btn-raised" style="float: right">Delete</button>
-    </div>
+    </form>
 </div>
