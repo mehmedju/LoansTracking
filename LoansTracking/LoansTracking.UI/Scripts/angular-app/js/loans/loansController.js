@@ -3,7 +3,7 @@
         'use strict';
 
         angular.extend($scope, {
-            addMode: false,
+            addMode: true,
             allUsers: [
 {
     $id: "1",
@@ -161,6 +161,10 @@
 }
             ]
         });
+
+        $scope.addNewLoan=function() {
+            $scope.addMode = true;
+        }
 
     }
     ]));
