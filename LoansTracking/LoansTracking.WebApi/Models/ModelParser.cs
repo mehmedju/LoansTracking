@@ -28,6 +28,14 @@ namespace LoansTracking.WebApi.Models
                 Id = model.Id,
                 FirstName = model.FirstName,
                 LastName= model.LastName,
+                DateOfBirth = model.DateOfBirth,
+                Gender = model.Gender,
+                MobileNumber = model.MobileNumber,
+                Address = model.Address,
+                Location = model.Location,
+                Company = model.Company,
+                Occupation = model.Occupation,
+                Email = model.Email
             };
         }
 

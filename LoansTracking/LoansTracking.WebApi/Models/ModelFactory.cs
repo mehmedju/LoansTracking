@@ -54,6 +54,14 @@ namespace LoansTracking.WebApi.Models
                 Id = entity.Id,
                 FirstName = entity.FirstName,
                 LastName = entity.LastName,
+                DateOfBirth = entity.DateOfBirth,
+                Gender = entity.Gender,
+                MobileNumber = entity.MobileNumber,
+                Address = entity.Address,
+                Location = entity.Location,
+                Company = entity.Company,
+                Occupation = entity.Occupation,
+                Email = entity.Email
             };
         }
 
