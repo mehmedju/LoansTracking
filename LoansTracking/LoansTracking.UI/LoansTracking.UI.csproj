@@ -99,8 +99,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\angular-app\controllers\mainController.js" />
     <Content Include="Scripts\angular-app\controllers\headerController.js" />
     <Content Include="Scripts\angular-app\css\ui-bootstrap-csp.css" />
+    <Content Include="Scripts\angular-app\img\city.jpg" />
     <Content Include="Scripts\angular-app\js\loans\loans.html" />
     <Content Include="Scripts\angular-app\js\loans\loansController.js" />
     <Content Include="Scripts\angular-app\js\loans\partials\rightPanel.html" />

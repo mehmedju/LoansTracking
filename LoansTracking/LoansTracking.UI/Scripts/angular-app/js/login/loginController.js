@@ -17,5 +17,6 @@
             (username === $scope.temporaryUsername && password === $scope.temporaryPassword) ?
                 $location.path('/loans') : $scope.showErrorMessage = true;
         }
+
     }
     ]));
