@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="Scripts/angular-app/css/style.css" type="text/css" />
     <link rel="stylesheet" href="Scripts/angular-app/css/bootstrap.min.css" type="text/css" />
     <!--<link rel="stylesheet" href="Scripts/angular-app/css/bootstrap-material-design.css" type="text/css" />-->
-    <link rel="stylesheet" href="Scripts/angular-app/css/ripples.css" type="text/css"/>
+    <link rel="stylesheet" href="Scripts/angular-app/css/ripples.css" type="text/css" />
     <link rel="stylesheet" href="Scripts/angular-app/css/ui-bootstrap-csp.css" type="text/css" />
 
     <script src="Scripts/lib/angular.min.js"></script>
@@ -37,8 +37,9 @@
     <script src="Scripts/angular-app/js/login/loginController.js"></script>
     <script src="Scripts/angular-app/js/signup/signupController.js"></script>
     <script src="Scripts/angular-app/controllers/headerController.js"></script>
+    <script src="Scripts/angular-app/controllers/mainController.js"></script>
 </head>
-<body>
-    <ng-view></ng-view>
+<body data-ng-controller="mainController" data-ng-class="{'background-img':getCurrentLocation()=='/login'|| getCurrentLocation()=='/signup'}">
+<ng-view></ng-view>
 </body>
 </html>
