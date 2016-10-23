@@ -1,6 +1,7 @@
 ﻿using LoansTracking.DB;
 using LoansTracking.DB.DataAccess;
 using LoansTracking.DB.Entities;
+using System;
 using System.Linq;
 
 namespace LoansTracking.WebApi.Models
@@ -60,6 +61,16 @@ namespace LoansTracking.WebApi.Models
                 Text = model.Text
             };
         }
-
+        public Account Create(AccountModel model, AppContext context)
+        {
+            return new Account()
+            {
+                Id = model.Id,
+                Email = model.Email,
+                Password = model.Password,
+                CreationDate = DateTime.Now,
+                Person = context.People.Find(model.Person)
+            };
+        }
     }
 }
