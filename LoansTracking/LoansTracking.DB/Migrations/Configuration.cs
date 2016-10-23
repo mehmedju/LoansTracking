@@ -1,10 +1,10 @@
 namespace LoansTracking.DB.Migrations
 {
-    using Entities;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Entities;
 
     internal sealed class Configuration : DbMigrationsConfiguration<AppContext>
     {
@@ -15,11 +15,12 @@ namespace LoansTracking.DB.Migrations
 
         protected override void Seed(AppContext context)
         {
-
             context.People.AddOrUpdate(
               p => p.Id,
-              new Person { FirstName = "John", LastName = "Doe" },
-              new Person { FirstName = "Johane", LastName = "Doe" }
+              new Person { FirstName = "John", LastName = "Doe", DateOfBirth = DateTime.Now, Gender = "Male", 
+                           MobileNumber = "061 456 789", Address = "Milana Preloga 12", Company = "Mistral",
+                           Location = "Sarajevo", Email = "johndoe@mail.com", Occupation = "Software developer"}
+              //new Person { FirstName = "Johane", LastName = "Doe" }
             );
             context.SaveChanges();
             context.Loans.AddOrUpdate(
@@ -47,8 +48,8 @@ namespace LoansTracking.DB.Migrations
 
             context.Notes.AddOrUpdate(
                 n => n.Id,
-                new Note {Text = "This is the first Note", Title = "First Note"},
-                new Note {Text = "And this is the second one", Title = "Second Note"});
+                new Note { Text = "This is the first Note", Title = "First Note" },
+                new Note { Text = "And this is the second one", Title = "Second Note" });
         }
-}
+    }
 }
