@@ -66,5 +66,16 @@ namespace LoansTracking.WebApi.Models
                 Text = entity.Text
             };
         }
+        public AccountModel Create(Account entity)
+        {
+            return new AccountModel()
+            {
+                Id = entity.Id,
+                Email = entity.Email,
+                Password = entity.Password,
+                CreationDate = entity.CreationDate,
+                Person = entity.Person.Id
+            };
+        }
     }
 }

@@ -16,5 +16,6 @@ namespace LoansTracking.DB
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<Note> Notes { get; set; }
+        public DbSet<Account> Accounts { get; set; }
     }
 }
