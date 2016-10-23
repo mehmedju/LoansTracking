@@ -1,0 +1,35 @@
+﻿<div data-ng-include="'Scripts/angular-app/views/header.html'"></div>
+<div class="container loans">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <button type="button" class="btn btn-primary btn-raised pull-right add-loan-btn" data-ng-click="addNewLoan()">Add new loan</button>
+            <table class="custom-responsive-table table-striped" style="cursor: pointer">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Status</th>
+                        <th>Due date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>James</td>
+                    <td>Matman</td>
+                    <td>-5900</td>
+                    <td>27.11.2017</td>
+                </tr>
+                <tr data-ng-repeat="loan in allLoans" data-ng-click="editLoan(loan)">
+                    <td>{{user.name}}</td>
+                    <td>{{user.surname}}</td>
+                    <td>{{user.amount}}</td>
+                    <td>{{user.dueDate}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div data-ng-include="'Scripts/angular-app/js/loans/partials/rightPanel.html'"></div>
+    </div>
+</div>
+
+

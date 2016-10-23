@@ -1,0 +1,14 @@
+﻿<header class="header-login-signup" data-ng-controller="headerController">
+    <div class="header-limiter">
+        <h1><a href="/#loans">Loans<span>tracking</span></a></h1>
+        <nav>
+            <a href="/#loans" data-ng-class="{selected:getCurrentLocation()=='/loans'}">Loans </a>
+            <a href="/#statistics" data-ng-class="{selected:getCurrentLocation()=='/statistics'}">Statistics </a>
+            <a href="/#notes" data-ng-class="{selected:getCurrentLocation()=='/notes'}">Notes </a>
+        </nav>
+        <ul style="margin-top: 15px;">
+            <li><a href="/#profile" data-ng-class="{selected:getCurrentLocation()=='/profile'}">Profile</a></li>
+            <li><a href="/#signup">Sign up</a></li>
+        </ul>
+    </div>
+</header>
