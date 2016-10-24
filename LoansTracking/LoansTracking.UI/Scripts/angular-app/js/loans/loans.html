@@ -13,17 +13,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>James</td>
-                    <td>Matman</td>
-                    <td>-5900</td>
-                    <td>27.11.2017</td>
-                </tr>
                 <tr data-ng-repeat="loan in allLoans" data-ng-click="editLoan(loan)">
-                    <td>{{user.name}}</td>
-                    <td>{{user.surname}}</td>
-                    <td>{{user.amount}}</td>
-                    <td>{{user.dueDate}}</td>
+                    <td>{{loan.name}}</td>
+                    <td>{{loan.surname}}</td>
+                    <td>{{loan.status}}</td>
+                    <td>{{loan.dueDate}}</td>
                 </tr>
                 </tbody>
             </table>

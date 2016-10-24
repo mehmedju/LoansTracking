@@ -1,12 +1,11 @@
 (angular.module('app')
-    .controller('loginController', ['$scope', '$location', function ($scope, $location) {
+    .controller('loginController', ['$scope', '$location', 'loginService', function ($scope, $location, loginService) {
         'use strict';
 
         angular.extend($scope, {
             showErrorMessage: false,
             user: {},
-            temporaryUsername: "admin",
-            temporaryPassword: "password"
+            credentials:loginService.getTemporaryCredentials()
         });
 
         $scope.goToSignup = function () {
@@ -14,7 +13,7 @@
         }
 
         $scope.login = function (username, password) {
-            (username === $scope.temporaryUsername && password === $scope.temporaryPassword) ?
+            (username === $scope.credentials.temporaryUsername && password === $scope.credentials.temporaryPassword) ?
                 $location.path('/loans') : $scope.showErrorMessage = true;
         }
 

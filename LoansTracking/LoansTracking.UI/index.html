@@ -28,6 +28,8 @@
     <script src="Scripts/lib/jquery.min.js"></script>
 
     <script src="app.js"></script>
+    <script src="Scripts/config/config.js"></script>
+
     <script src="Scripts/angular-app/js/loans/loansController.js"></script>
     <script src="Scripts/angular-app/js/loans/partials/rightPanelController.js"></script>
     <script src="Scripts/angular-app/js/loans/partials/allPaymentsModalController.js"></script>
@@ -38,6 +40,10 @@
     <script src="Scripts/angular-app/js/signup/signupController.js"></script>
     <script src="Scripts/angular-app/controllers/headerController.js"></script>
     <script src="Scripts/angular-app/controllers/mainController.js"></script>
+
+    <script src="Scripts/angular-app/js/login/loginService.js"></script>
+    <script src="Scripts/angular-app/services/dataService.js"></script>
+    <script src="Scripts/angular-app/js/loans/loansService.js"></script>
 </head>
 <body data-ng-controller="mainController" data-ng-class="{'background-img':getCurrentLocation()=='/login'|| getCurrentLocation()=='/signup'}">
 <ng-view></ng-view>
