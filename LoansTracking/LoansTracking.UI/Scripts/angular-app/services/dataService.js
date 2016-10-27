@@ -4,7 +4,7 @@
         this.get = function (url) {
             var deferred = $q.defer();
             $http.get(url).
-                success(function (response) {
+                success(function (response, status) {
                     deferred.resolve(response);
                 }).error(function (err) {
                     deferred.reject(err);

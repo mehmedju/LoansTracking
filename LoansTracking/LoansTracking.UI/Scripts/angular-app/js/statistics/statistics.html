@@ -8,7 +8,7 @@
             <div class="panel panel-warning">
                 <div class="panel-heading">Total active loans in KM</div>
                 <div class="panel-body">
-                    55550000
+                    {{totalActive}}
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="panel panel-success">
                 <div class="panel-heading">Total returned loans in KM</div>
                 <div class="panel-body">
-                    55550000
+                    {{totalPaidOff}}
                 </div>
             </div>
         </div>
@@ -31,17 +31,17 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Column heading</th>
-                                    <th>Column heading</th>
-                                    <th>Column heading</th>
+                                    <th>Name</th>
+                                    <th>Total amount</th>
+                                    <th># of payment sessions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="n in [].constructor(100) track by $index" class="{{$even ? 'success' : 'info'}}">
+                                <tr data-ng-repeat="stat in allStatistics">
                                     <td>{{$index+1}}</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
+                                    <td>{{stat.name}} {{stat.surname}}</td>
+                                    <td>{{stat.amount}}</td>
+                                    <td>{{stat.payments.length}}</td>
                                 </tr>
                             </tbody>
                         </table>
