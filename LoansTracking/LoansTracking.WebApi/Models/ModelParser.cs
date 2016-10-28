@@ -35,7 +35,8 @@ namespace LoansTracking.WebApi.Models
                 Location = model.Location,
                 Company = model.Company,
                 Occupation = model.Occupation,
-                Email = model.Email
+                Email = model.Email,
+                Password = model.Password
             };
         }
 

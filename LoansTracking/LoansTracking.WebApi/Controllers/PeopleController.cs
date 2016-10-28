@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 
 namespace LoansTracking.WebApi.Controllers
@@ -50,6 +51,9 @@ namespace LoansTracking.WebApi.Controllers
         {
             try
             {
+                var passBytes = Encoding.UTF8.GetBytes(model.Password);
+                string encodedPass = Convert.ToBase64String(passBytes);
+                model.Password = encodedPass;
                 Person person = Parser.Create(model, Repository.BaseContext());
                 Repository.Insert(person);
                 var newPerson = Repository.Get().OrderByDescending(x => x.Id).FirstOrDefault();
