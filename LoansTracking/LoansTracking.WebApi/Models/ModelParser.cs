@@ -35,7 +35,8 @@ namespace LoansTracking.WebApi.Models
                 Location = model.Location,
                 Company = model.Company,
                 Occupation = model.Occupation,
-                Email = model.Email
+                Email = model.Email,
+                Password = model.Password
             };
         }
 
@@ -59,17 +60,6 @@ namespace LoansTracking.WebApi.Models
                 Id = model.Id,
                 Title = model.Title,
                 Text = model.Text
-            };
-        }
-        public Account Create(AccountModel model, AppContext context)
-        {
-            return new Account()
-            {
-                Id = model.Id,
-                Email = model.Email,
-                Password = model.Password,
-                CreationDate = DateTime.Now,
-                Person = context.People.Find(model.Person)
             };
         }
     }
