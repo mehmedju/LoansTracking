@@ -1,7 +1,9 @@
 ﻿using LoansTracking.DB;
 using LoansTracking.DB.DataAccess;
 using LoansTracking.DB.Entities;
+using System;
 using System.Linq;
+using System.Text;
 
 namespace LoansTracking.WebApi.Models
 {
@@ -49,6 +51,8 @@ namespace LoansTracking.WebApi.Models
 
         public PersonModel Create(Person entity)
         {
+            var base64Pass = Convert.FromBase64String(entity.Password);
+            string realPass = Encoding.UTF8.GetString(base64Pass);
             return new PersonModel()
             {
                 Id = entity.Id,
@@ -61,7 +65,8 @@ namespace LoansTracking.WebApi.Models
                 Location = entity.Location,
                 Company = entity.Company,
                 Occupation = entity.Occupation,
-                Email = entity.Email
+                Email = entity.Email,
+                Password = realPass
             };
         }
 
@@ -72,17 +77,6 @@ namespace LoansTracking.WebApi.Models
                 Id = entity.Id,
                 Title = entity.Title,
                 Text = entity.Text
-            };
-        }
-        public AccountModel Create(Account entity)
-        {
-            return new AccountModel()
-            {
-                Id = entity.Id,
-                Email = entity.Email,
-                Password = entity.Password,
-                CreationDate = entity.CreationDate,
-                Person = entity.Person.Id
             };
         }
     }

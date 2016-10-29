@@ -179,9 +179,9 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\LoansController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
@@ -189,8 +189,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\LoanModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ModelFactory.cs" />
     <Compile Include="Models\ModelParser.cs" />
     <Compile Include="Models\PaymentModel.cs" />
