@@ -76,6 +76,9 @@ namespace LoansTracking.WebApi.Controllers
                 }
                 else
                 {
+                    var passBytes = Encoding.UTF8.GetBytes(model.Password);
+                    string encodedPass = Convert.ToBase64String(passBytes);
+                    model.Password = encodedPass;                    
                     Repository.Update(Parser.Create(model, Repository.BaseContext()), person.Id);
                     return Ok(model);
                 }

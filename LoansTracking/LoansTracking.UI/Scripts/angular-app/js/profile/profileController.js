@@ -3,6 +3,7 @@
         'use strict';
 
         angular.extend($scope, {
+            //change user to get currently logged in user
             user : {
                 id: 3,
                 firstName: "Angular",
@@ -15,16 +16,17 @@
                 occupation: "Software developer",
                 company: "Mistral",
                 email: "angular@mistral.com",
-                password: ""
+                password: "martina"
             },
             birthDate: {
                 opened: false
-            }
+            },
+            successful: false,
         });             
 
+        //hardcoded - change this 
         profileService.getLoggedUser(5).then(function (data) {
             $scope.loggedUser = data;
-            console.log($scope.loggedUser);
         });
 
         $scope.openBirthDate = function () {
@@ -32,8 +34,8 @@
         };
 
         $scope.updateProfile = function (user, id) {
-            console.log(user, id);
             profileService.updateProfile(user, id);
+            $scope.successful = true;
         };
     }
 
