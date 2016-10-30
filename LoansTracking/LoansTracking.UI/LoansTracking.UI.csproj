@@ -138,7 +138,6 @@
   <ItemGroup>
     <Content Include="app.js" />
     <Content Include="index.html" />
-    <Content Include="Scripts\angular-app\css\bootstrap-material-design.css" />
     <Content Include="Scripts\angular-app\css\bootstrap.min.css" />
     <Content Include="Scripts\angular-app\css\ripples.css" />
     <Content Include="Scripts\angular-app\css\style.css" />
