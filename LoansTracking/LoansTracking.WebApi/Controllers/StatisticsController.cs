@@ -46,7 +46,7 @@ namespace LoansTracking.WebApi.Controllers
                 }
                 else
                 {
-                    return BadRequest("You don't have any paid off loans");
+                    return Ok("You don't have any paid off loans");
                 }
             }
             catch(Exception ex)
