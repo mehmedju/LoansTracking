@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="app">
 <head>
     <title>Loans tracking</title>
@@ -14,11 +14,13 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
-    <link rel="stylesheet" href="Scripts/angular-app/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="Scripts/angular-app/css/bootstrap.min.css" type="text/css" />
-    <!--<link rel="stylesheet" href="Scripts/angular-app/css/bootstrap-material-design.css" type="text/css" />-->
-    <link rel="stylesheet" href="Scripts/angular-app/css/ripples.css" type="text/css" />
-    <link rel="stylesheet" href="Scripts/angular-app/css/ui-bootstrap-csp.css" type="text/css" />
+    <!-- injector:css -->
+    <link rel="stylesheet" href="/Scripts/angular-app/css/bootstrap-material-design.css">
+    <link rel="stylesheet" href="/Scripts/angular-app/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Scripts/angular-app/css/ripples.css">
+    <link rel="stylesheet" href="/Scripts/angular-app/css/style.css">
+    <link rel="stylesheet" href="/Scripts/angular-app/css/ui-bootstrap-csp.css">
+    <!-- endinjector -->
 
     <script src="Scripts/lib/angular.min.js"></script>
     <script src="Scripts/lib/angular-route.min.js"></script>
@@ -30,23 +32,23 @@
     <script src="app.js"></script>
     <script src="Scripts/config/config.js"></script>
 
-    <script src="Scripts/angular-app/js/loans/loansController.js"></script>
-    <script src="Scripts/angular-app/js/loans/partials/rightPanelController.js"></script>
-    <script src="Scripts/angular-app/js/loans/partials/allPaymentsModalController.js"></script>
-    <script src="Scripts/angular-app/js/statistics/statisticsController.js"></script>
-    <script src="Scripts/angular-app/js/notes/notesController.js"></script>
-    <script src="Scripts/angular-app/js/profile/profileController.js"></script>
-    <script src="Scripts/angular-app/js/login/loginController.js"></script>
-    <script src="Scripts/angular-app/js/signup/signupController.js"></script>
-    <script src="Scripts/angular-app/controllers/headerController.js"></script>
-    <script src="Scripts/angular-app/controllers/mainController.js"></script>
-
-    <script src="Scripts/angular-app/js/login/loginService.js"></script>
-    <script src="Scripts/angular-app/services/dataService.js"></script>
-    <script src="Scripts/angular-app/js/loans/loansService.js"></script>
-    <script src="Scripts/angular-app/js/statistics/statisticsService.js"></script>
-    <script src="Scripts/angular-app/js/profile/profileService.js"></script>
-
+    <!-- injector:js -->
+    <script src="/Scripts/angular-app/js/loans/loansController.js"></script>
+    <script src="/Scripts/angular-app/js/loans/loansService.js"></script>
+    <script src="/Scripts/angular-app/js/loans/partials/allPaymentsModalController.js"></script>
+    <script src="/Scripts/angular-app/js/loans/partials/rightPanelController.js"></script>
+    <script src="/Scripts/angular-app/js/login/loginController.js"></script>
+    <script src="/Scripts/angular-app/js/login/loginService.js"></script>
+    <script src="/Scripts/angular-app/js/notes/notesController.js"></script>
+    <script src="/Scripts/angular-app/js/profile/profileController.js"></script>
+    <script src="/Scripts/angular-app/js/profile/profileService.js"></script>
+    <script src="/Scripts/angular-app/js/signup/signupController.js"></script>
+    <script src="/Scripts/angular-app/js/statistics/statisticsController.js"></script>
+    <script src="/Scripts/angular-app/js/statistics/statisticsService.js"></script>
+    <script src="/Scripts/angular-app/controllers/headerController.js"></script>
+    <script src="/Scripts/angular-app/controllers/mainController.js"></script>
+    <script src="/Scripts/angular-app/services/dataService.js"></script>
+    <!-- endinjector -->
 
 </head>
 <body data-ng-controller="mainController" data-ng-class="{'background-img':getCurrentLocation()=='/login'|| getCurrentLocation()=='/signup'}">
