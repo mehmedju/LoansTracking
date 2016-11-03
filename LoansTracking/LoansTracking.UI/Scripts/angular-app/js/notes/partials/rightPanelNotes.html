@@ -11,7 +11,7 @@
             <label for="note">Note:</label>
             <textarea class="form-control" id="note" name="note" placeholder="Enter a note" required ng-minlength="20" ng-model="note.note"></textarea>
             <span ng-show="form.note.$touched && form.note.$error.required" class="text-danger">Note is required!</span>
-            <span ng-show="form.note.$touched && form.note.$invalid" class="text-danger">Surname must be at least 20 characters!</span>
+            <span ng-show="form.note.$touched && form.note.$invalid" class="text-danger">Note must be at least 20 characters!</span>
         </div>
         <div class="form-group">
             <button type="button" class="btn btn-default btn-raised">Cancel</button>
