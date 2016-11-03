@@ -114,6 +114,7 @@
     <Content Include="Scripts\angular-app\js\notes\notesService.js" />
     <Content Include="Scripts\angular-app\js\notes\partials\rightPanelNotes.html" />
     <Content Include="Scripts\angular-app\js\notes\partials\rightPanelNotesController.js" />
+    <Content Include="Scripts\angular-app\js\profile\profileService.js" />
     <Content Include="Scripts\angular-app\js\signup\signup.html" />
     <Content Include="Scripts\angular-app\js\signup\signupController.js" />
     <Content Include="Scripts\angular-app\js\statistics\statisticsService.js" />
@@ -140,7 +141,6 @@
   <ItemGroup>
     <Content Include="app.js" />
     <Content Include="index.html" />
-    <Content Include="Scripts\angular-app\css\bootstrap-material-design.css" />
     <Content Include="Scripts\angular-app\css\bootstrap.min.css" />
     <Content Include="Scripts\angular-app\css\ripples.css" />
     <Content Include="Scripts\angular-app\css\style.css" />

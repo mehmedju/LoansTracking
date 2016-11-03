@@ -17,10 +17,32 @@ namespace LoansTracking.DB.Migrations
         {
             context.People.AddOrUpdate(
               p => p.Id,
-              new Person { FirstName = "John", LastName = "Doe", DateOfBirth = DateTime.Now, Gender = "Male", 
-                           MobileNumber = "061 456 789", Address = "Milana Preloga 12", Company = "Mistral",
-                           Location = "Sarajevo", Email = "johndoe@mail.com", Occupation = "Software developer"}
-              //new Person { FirstName = "Johane", LastName = "Doe" }
+              new Person
+              {
+                  FirstName = "John",
+                  LastName = "Doe",
+                  DateOfBirth = DateTime.Now,
+                  Gender = "Male",
+                  MobileNumber = "061 456 789",
+                  Address = "Milana Preloga 12",
+                  Company = "Mistral",
+                  Location = "Sarajevo",
+                  Email = "johndoe@mail.com",
+                  Occupation = "Software developer"
+              },
+             new Person
+             {
+                 FirstName = "Kevin",
+                 LastName = "Smith",
+                 DateOfBirth = DateTime.Now,
+                 Gender = "Male",
+                 MobileNumber = "061 589 111",
+                 Address = "Grbavicka 18",
+                 Company = "Mistral",
+                 Location = "Sarajevo",
+                 Email = "kevinsmith@mail.com",
+                 Occupation = "Software developer"
+             }
             );
             context.SaveChanges();
             context.Loans.AddOrUpdate(
