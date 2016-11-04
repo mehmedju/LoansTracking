@@ -23,5 +23,8 @@
         $scope.datepicker2 = {
             opened: false
         };
-    }
-    ]));
+
+        $scope.amount = 400;
+        $scope.payments = [200, 30, 50];
+    }])
+);
