@@ -106,6 +106,7 @@
     <Content Include="Scripts\angular-app\js\loans\loans.html" />
     <Content Include="Scripts\angular-app\js\loans\loansController.js" />
     <Content Include="Scripts\angular-app\js\loans\loansService.js" />
+    <Content Include="Scripts\angular-app\js\loans\partials\loanStatusDirective.js" />
     <Content Include="Scripts\angular-app\js\loans\partials\rightPanel.html" />
     <Content Include="Scripts\angular-app\js\loans\partials\rightPanelController.js" />
     <Content Include="Scripts\angular-app\js\loans\partials\allPaymentsModal.html" />
