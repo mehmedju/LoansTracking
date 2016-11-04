@@ -1,49 +1,25 @@
 ﻿<div data-ng-include="'Scripts/angular-app/views/header.html'"></div>
-<div class="container">
+<div class="container loans">
     <div class="row">
-        <div class="col-xs-12"><br /><br /></div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Add new note</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="form-group"><input type="text" class="form-control" placeholder="Title" name="email" required="required"></div>
-                    <div class="form-group">
-                        <textarea class="form-control" rows="3" placeholder="Note" style="resize:none"></textarea>
-                    </div>
-                    <div class="form-group"><button type="button" class="btn btn-default">Submit</button></div>
-                </div>
-            </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <button type="button" class="btn btn-primary btn-raised pull-right add-loan-btn" data-ng-click="addNewNote()">Add new note</button>
+            <table class="custom-responsive-table table-striped" style="cursor: pointer">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-ng-repeat="note in allNotes" data-ng-click="editNote(note)">
+                        <td>{{note.title}}</td>
+                        <td>{{note.note}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="col-xs-12">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h3 class="panel-title">List of all notes</h3>
-                </div>
-                <div class="panel-body">
-                    <table class="table table-hover ">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Date</th>
-                                <th>Title</th>
-                                <th>Note</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="n in [].constructor(50) track by $index" class="{{$even ? 'success' : 'info'}}">
-                                <td>{{$index+1}}</td>
-                                <td>Date</td>
-                                <td>Title</td>
-                                <td>Note</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <div data-ng-include="'Scripts/angular-app/js/loans/partials/rightPanelNotes.html'"></div>
     </div>
 </div>
+
+

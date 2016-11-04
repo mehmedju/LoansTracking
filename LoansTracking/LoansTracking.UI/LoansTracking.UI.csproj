@@ -112,6 +112,9 @@
     <Content Include="Scripts\angular-app\js\loans\partials\allPaymentsModal.html" />
     <Content Include="Scripts\angular-app\js\loans\partials\allPaymentsModalController.js" />
     <Content Include="Scripts\angular-app\js\login\loginService.js" />
+    <Content Include="Scripts\angular-app\js\notes\notesService.js" />
+    <Content Include="Scripts\angular-app\js\notes\partials\rightPanelNotes.html" />
+    <Content Include="Scripts\angular-app\js\notes\partials\rightPanelNotesController.js" />
     <Content Include="Scripts\angular-app\js\profile\profileService.js" />
     <Content Include="Scripts\angular-app\js\signup\signup.html" />
     <Content Include="Scripts\angular-app\js\signup\signupController.js" />
