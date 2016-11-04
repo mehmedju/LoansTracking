@@ -11,7 +11,7 @@
                 for (var i = scope.payments.length; i--;) {
                     paymentsSum += scope.payments[i];
                 }
-                scope.loanStatus = scope.amount + paymentsSum;
+                scope.loanStatus = scope.amount - paymentsSum;
             },
             template: 'Status <span class="badge red">{{loanStatus}} KM</span>'
         };

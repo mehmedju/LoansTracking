@@ -24,7 +24,7 @@
             opened: false
         };
 
-        $scope.amount = -400;
+        $scope.amount = 400;
         $scope.payments = [200, 30, 50];
     }])
 );
