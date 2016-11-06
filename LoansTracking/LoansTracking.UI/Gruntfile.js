@@ -44,8 +44,12 @@
             options: {},
             local_dependencies: {
                 files: {
-                    'index.html': [ 'Scripts/angular-app/js/**/*.js',
-                                    'Scripts/angular-app/**/**/*.js',
+                    'index.html': [ 'Scripts/angular-app/js/**/*Service.js',
+                                    'Scripts/angular-app/**/**/*Service.js',
+                                    'Scripts/angular-app/js/**/*Controller.js',
+                                    'Scripts/angular-app/**/**/*Controller.js',
+                                    'Scripts/angular-app/js/**/*Directive.js',
+                                    'Scripts/angular-app/**/**/*Directive.js',
                                     'Scripts/angular-app/css/*.css'],
                 }
             }
@@ -64,7 +68,7 @@
         },
         browserSync: {
             bsFiles: {
-                src: 'Scripts/angular-app/css/*.css'
+                src: ['Scripts/angular-app/css/*.css', 'Scripts/angular-app/**/**/*.js','Scripts/angular-app/js/**/*.js'],
             },
             options: {
                 server: {
