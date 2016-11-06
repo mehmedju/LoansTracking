@@ -118,6 +118,9 @@
     <Content Include="Scripts\angular-app\js\profile\profileService.js" />
     <Content Include="Scripts\angular-app\js\signup\signup.html" />
     <Content Include="Scripts\angular-app\js\signup\signupController.js" />
+    <Content Include="Scripts\angular-app\js\statistics\activeLoans.html" />
+    <Content Include="Scripts\angular-app\js\statistics\loansStatisticsDirective.js" />
+    <Content Include="Scripts\angular-app\js\statistics\returnedLoans.html" />
     <Content Include="Scripts\angular-app\js\statistics\statisticsService.js" />
     <Content Include="Scripts\angular-app\services\dataService.js" />
     <Content Include="Scripts\config\config.js" />
