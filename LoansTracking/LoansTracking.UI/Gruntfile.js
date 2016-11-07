@@ -44,10 +44,10 @@
             options: {},
             local_dependencies: {
                 files: {
-                    'index.html': [ 'Scripts/angular-app/js/**/*Service.js',
-                                    'Scripts/angular-app/**/**/*Service.js',
-                                    'Scripts/angular-app/js/**/*Controller.js',
+                    'index.html': [ 'Scripts/angular-app/js/**/*Controller.js',
                                     'Scripts/angular-app/**/**/*Controller.js',
+                                    'Scripts/angular-app/js/**/*Service.js',
+                                    'Scripts/angular-app/**/**/*Service.js',
                                     'Scripts/angular-app/js/**/*Directive.js',
                                     'Scripts/angular-app/**/**/*Directive.js',
                                     'Scripts/angular-app/css/*.css'],
