@@ -1,5 +1,5 @@
 ﻿(angular.module('app')
-    .controller('notesController', ['$scope', function ($scope) {
+    .controller('notesController', ['$scope', 'notesService', function ($scope, notesService) {
         'use strict';
 
         angular.extend($scope, {
@@ -8,7 +8,7 @@
 
         notesService.getNotes().then(function (data) {
             $scope.allNotes = data;
-        });
+        });  
 
         $scope.addNewNote = function () {
             $scope.addMode = true;
