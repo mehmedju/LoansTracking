@@ -4,22 +4,8 @@
         <div class="col-xs-12"><br /><br /></div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <div class="panel panel-warning">
-                <div class="panel-heading">Total active loans in KM</div>
-                <div class="panel-body">
-                    {{totalActive}}
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <div class="panel panel-success">
-                <div class="panel-heading">Total returned loans in KM</div>
-                <div class="panel-body">
-                    {{totalPaidOff}}
-                </div>
-            </div>
-        </div>
+        <active-loans amount ="totalActive"> </active-loans>
+        <returned-loans amount ="totalPaidOff"></returned-loans>
         <div class="col-xs-12">
 
                 <div class="panel panel-success">

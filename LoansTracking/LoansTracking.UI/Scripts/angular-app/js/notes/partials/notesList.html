@@ -1,0 +1,14 @@
+﻿<table class="custom-responsive-table table-striped" style="cursor: pointer">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="note in allNotes | filter:{title:search}" data-ng-click="editNote(note)">
+            <td>{{note.title}}</td>
+            <td>{{note.note}}</td>
+        </tr>
+    </tbody>
+</table>

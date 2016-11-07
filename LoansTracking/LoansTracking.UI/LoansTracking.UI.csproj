@@ -113,11 +113,17 @@
     <Content Include="Scripts\angular-app\js\loans\partials\allPaymentsModalController.js" />
     <Content Include="Scripts\angular-app\js\login\loginService.js" />
     <Content Include="Scripts\angular-app\js\notes\notesService.js" />
+    <Content Include="Scripts\angular-app\js\notes\partials\notesList.html" />
+    <Content Include="Scripts\angular-app\js\notes\partials\notesListDirective.js" />
     <Content Include="Scripts\angular-app\js\notes\partials\rightPanelNotes.html" />
     <Content Include="Scripts\angular-app\js\notes\partials\rightPanelNotesController.js" />
     <Content Include="Scripts\angular-app\js\profile\profileService.js" />
     <Content Include="Scripts\angular-app\js\signup\signup.html" />
     <Content Include="Scripts\angular-app\js\signup\signupController.js" />
+    <Content Include="Scripts\angular-app\js\signup\signupService.js" />
+    <Content Include="Scripts\angular-app\js\statistics\activeLoans.html" />
+    <Content Include="Scripts\angular-app\js\statistics\loansStatisticsDirective.js" />
+    <Content Include="Scripts\angular-app\js\statistics\returnedLoans.html" />
     <Content Include="Scripts\angular-app\js\statistics\statisticsService.js" />
     <Content Include="Scripts\angular-app\services\dataService.js" />
     <Content Include="Scripts\config\config.js" />

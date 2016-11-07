@@ -848,3 +848,8 @@ textarea {
 .text-danger {
     color: red;
 }
+
+.search {
+        width: 200px;
+    float: left;
+}
