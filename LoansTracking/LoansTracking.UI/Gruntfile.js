@@ -50,6 +50,8 @@
                                     'Scripts/angular-app/**/**/*Service.js',
                                     'Scripts/angular-app/js/**/*Directive.js',
                                     'Scripts/angular-app/**/**/*Directive.js',
+                                    'Scripts/angular-app/js/**/*Filter.js',
+                                    'Scripts/angular-app/**/**/*Filter.js',
                                     'Scripts/angular-app/css/*.css'],
                 }
             }
