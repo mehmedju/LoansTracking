@@ -10,47 +10,47 @@ namespace LoansTracking.DB.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(AppContext context)
         {
-            context.People.AddOrUpdate(
-                p => p.Id,
-                new Person
-                {
-                    FirstName = "Admin",
-                    LastName = "Administrator",
-                    DateOfBirth = DateTime.Now,
-                    Gender = "Male",
-                    MobileNumber = "111/222-333",
-                    Address = "Address 1",
-                    Location = "Sarajevo",
-                    Company = "Mistral",
-                    Occupation = "Developer",
-                    Email = "admin",
-                    Password = "password"
-                }
-            );
-            context.SaveChanges();
-            var allLoans = context.Loans.ToList();
-            if(allLoans != null)
-            {
-                foreach(var loan in allLoans)
-                {
-                    loan.Person = context.People.Where(x => x.Email == "admin").FirstOrDefault();
-                    context.SaveChanges();
-                }
-            }
-            var allNotes = context.Notes.ToList();
-            if (allNotes != null)
-            {
-                foreach (var note in allNotes)
-                {
-                    note.Person = context.People.Where(x => x.Email == "admin").FirstOrDefault();
-                    context.SaveChanges();
-                }
-            }
+            //context.People.AddOrUpdate(
+            //    p => p.Id,
+            //    new Person
+            //    {
+            //        FirstName = "Admin",
+            //        LastName = "Administrator",
+            //        DateOfBirth = DateTime.Now,
+            //        Gender = "Male",
+            //        MobileNumber = "111/222-333",
+            //        Address = "Address 1",
+            //        Location = "Sarajevo",
+            //        Company = "Mistral",
+            //        Occupation = "Developer",
+            //        Email = "admin",
+            //        Password = "password"
+            //    }
+            //);
+            //context.SaveChanges();
+            //var allLoans = context.Loans.ToList();
+            //if(allLoans != null)
+            //{
+            //    foreach(var loan in allLoans)
+            //    {
+            //        loan.Person = context.People.Where(x => x.Email == "admin").FirstOrDefault();
+            //        context.SaveChanges();
+            //    }
+            //}
+            //var allNotes = context.Notes.ToList();
+            //if (allNotes != null)
+            //{
+            //    foreach (var note in allNotes)
+            //    {
+            //        note.Person = context.People.Where(x => x.Email == "admin").FirstOrDefault();
+            //        context.SaveChanges();
+            //    }
+            //}
             //context.People.AddOrUpdate(
             //  p => p.Id,
             //  new Person

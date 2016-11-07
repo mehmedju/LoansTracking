@@ -13,7 +13,8 @@ namespace LoansTracking.WebApi.Models
             return new Loan()
             {
                 Id = model.Id,
-                Person = context.People.Find(model.Person),
+                PersonLoanedTo = context.People.Find(model.PersonLoanedTo),
+                PersonLoanedFrom = context.People.Find(model.PersonLoanedFrom),
                 Amount = model.Amount,
                 DueDate = model.DueDate,
                 PaidOff = model.PaidOff
@@ -49,7 +50,7 @@ namespace LoansTracking.WebApi.Models
                 Date = model.Date,  
                 
             };
-            payment.Loan = new Repository<Loan>(context).Get().Where(x => x.Person.Id == model.PaidById).FirstOrDefault();
+            payment.Loan = new Repository<Loan>(context).Get().Where(x => x.PersonLoanedTo.Id == model.PaidById).FirstOrDefault();
             return payment;
         }
 
