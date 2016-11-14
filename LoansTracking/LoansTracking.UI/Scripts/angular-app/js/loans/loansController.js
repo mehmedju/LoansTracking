@@ -1,9 +1,10 @@
 ﻿(angular.module('app')
-    .controller('loansController', ['$scope', 'loansService', function ($scope, loansService) {
+    .controller('loansController', ['$scope', 'loansService', 'authService', function ($scope, loansService, authService) {
         'use strict';
 
         angular.extend($scope, {
-            addMode: true
+            addMode: true,
+            currentUser: authService.getCookie()
         });
 
         loansService.getLoans().then(function (data) {
@@ -13,7 +14,6 @@
         $scope.addNewLoan = function () {
             $scope.addMode = true;
         }
-
     }
     ]));
 

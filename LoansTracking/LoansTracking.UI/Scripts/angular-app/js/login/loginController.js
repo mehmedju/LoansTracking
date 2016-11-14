@@ -1,5 +1,5 @@
 (angular.module('app')
-    .controller('loginController', ['$scope', '$location', 'loginService', function ($scope, $location, loginService) {
+    .controller('loginController', ['$scope', '$location', 'loginService', 'authService', function ($scope, $location, loginService, authService) {
         'use strict';
 
         angular.extend($scope, {
@@ -15,6 +15,7 @@
         $scope.login = function (username, password) {
             (username === $scope.credentials.temporaryUsername && password === $scope.credentials.temporaryPassword) ?
                 $location.path('/loans') : $scope.showErrorMessage = true;
+            authService.putCookie(username);
         }
 
     }
