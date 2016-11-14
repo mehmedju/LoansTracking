@@ -1,5 +1,5 @@
 ﻿(angular.module('app')
-    .controller('rightPanelController', ['$scope', '$uibModal', function ($scope, $uibModal) {
+    .controller('rightPanelController', ['$scope', '$uibModal', 'loansService', function ($scope, $uibModal, loansService) {
         'use strict';
         $scope.openAllPaymentsModal = function () {
             $uibModal.open({
@@ -22,6 +22,17 @@
 
         $scope.datepicker2 = {
             opened: false
+        };
+        $scope.createLoan = function () {
+            $scope.newLoan = {
+                id: 0,
+                person: 12,
+                firstName: $scope.loan.name,
+                lastName: $scope.loan.surname,
+                amount: $scope.amount,
+                dueDate: Date.now
+            };
+            loansService.createLoans($scope.newLoan);
         };
 
         $scope.amount = 400;

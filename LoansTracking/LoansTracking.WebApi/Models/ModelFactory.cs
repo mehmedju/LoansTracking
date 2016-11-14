@@ -15,9 +15,12 @@ namespace LoansTracking.WebApi.Models
             var LoanModel = new LoanModel()
             {
                 Id = entity.Id,
-                Person = entity.Person.Id,
-                Name = entity.Person.FirstName,
-                Surname = entity.Person.LastName,
+                PersonLoanedTo = entity.PersonLoanedTo.Id,
+                PersonLoanedFrom = entity.PersonLoanedFrom.Id,
+                PersonLoanedToName = entity.PersonLoanedTo.FirstName,
+                PersonLoanedToSurname = entity.PersonLoanedTo.LastName,
+                PersonLoanedFromName = entity.PersonLoanedFrom.FirstName,
+                PersonLoanedFromSurname = entity.PersonLoanedFrom.LastName,
                 Amount = entity.Amount,
                 DueDate = entity.DueDate,
                 PaidOff = entity.PaidOff,
@@ -30,8 +33,8 @@ namespace LoansTracking.WebApi.Models
                     AmountPaid = payment.AmountPaid,
                     Date = payment.Date,
                     Id = payment.Id,
-                    PaidBy =entity.Person.FirstName,
-                    PaidById = entity.Person.Id
+                    PaidBy =entity.PersonLoanedTo.FirstName,
+                    PaidById = entity.PersonLoanedTo.Id
                 });
             }
             return LoanModel;         
@@ -44,8 +47,8 @@ namespace LoansTracking.WebApi.Models
                 Id = entity.Id,
                 AmountPaid = entity.AmountPaid,
                 Date = entity.Date,
-                PaidBy = entity.Loan.Person.FirstName,
-                PaidById = entity.Loan.Person.Id
+                PaidBy = entity.Loan.PersonLoanedTo.FirstName,
+                PaidById = entity.Loan.PersonLoanedTo.Id
             };
         }
 

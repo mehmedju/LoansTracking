@@ -47,7 +47,7 @@ namespace LoansTracking.WebApi.Controllers
         {
             try
             {
-                if(Repository.Get().Where(x => x.Person.Id == model.Person).FirstOrDefault() == null)
+                if(Repository.Get().Where(x => x.PersonLoanedTo.Id == model.PersonLoanedTo).FirstOrDefault() == null)
                 {
                     Loan Loan = Parser.Create(model, Repository.BaseContext());
                     Repository.Insert(Loan);

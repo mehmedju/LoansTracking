@@ -60,9 +60,9 @@
     <Compile Include="Entities\Payment.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Entities\Note.cs" />
-    <Compile Include="Migrations\201611031216251_Migration.cs" />
-    <Compile Include="Migrations\201611031216251_Migration.Designer.cs">
-      <DependentUpon>201611031216251_Migration.cs</DependentUpon>
+    <Compile Include="Migrations\201611072143246_Admin_User.cs" />
+    <Compile Include="Migrations\201611072143246_Admin_User.Designer.cs">
+      <DependentUpon>201611072143246_Admin_User.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,8 +72,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611031216251_Migration.resx">
-      <DependentUpon>201611031216251_Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611072143246_Admin_User.resx">
+      <DependentUpon>201611072143246_Admin_User.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

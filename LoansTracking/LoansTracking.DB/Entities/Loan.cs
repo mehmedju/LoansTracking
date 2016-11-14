@@ -18,7 +18,8 @@ namespace LoansTracking.DB.Entities
         public double Amount { get; set; }
         public DateTime DueDate { get; set; }
 
-        public virtual Person Person { get; set; }
+        public virtual Person PersonLoanedTo { get; set; }
+        public virtual Person PersonLoanedFrom { get; set; }
         public virtual ICollection<Payment> Payments { get; set; }
     }
     
