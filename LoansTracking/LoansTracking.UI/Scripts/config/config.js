@@ -2,8 +2,8 @@
 
 var loansUrl = baseRoute + 'loans';
 var notesUrl = baseRoute + 'notes';
-var totalStatisticsUrl = baseRoute + 'statistics/total';
-var paidOffStatitsticsUrl = baseRoute + 'statistics/paidoff';
+var totalStatisticsUrl = baseRoute + 'statistics/total/';
+var paidOffStatitsticsUrl = baseRoute + 'statistics/paidoff/';
 
 //people
 var peopleUrl = baseRoute + 'people/';

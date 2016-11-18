@@ -14,15 +14,15 @@ namespace LoansTracking.WebApi.Controllers
     {
         public StatisticsController(Repository<Loan> depo) : base(depo) { }
 
-        [Route("api/statistics/total")]
+        [Route("api/statistics/total/{id}")]
         [HttpGet]
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(int id)
         {
             try
             {
                 var totalModel = new TotalStatisticsModel();
-                totalModel.TotalPaidOff = new Repository<Payment>(Repository.BaseContext()).Get().Select(x => x.AmountPaid).DefaultIfEmpty(0).Sum();
-                var totalAmount = Repository.Get().Select(x => x.Amount).DefaultIfEmpty(0).Sum();
+                totalModel.TotalPaidOff = new Repository<Payment>(Repository.BaseContext()).Get().Where(x => x.Loan.PersonLoanedFrom.Id == id).Select(x => x.AmountPaid).DefaultIfEmpty(0).Sum();
+                var totalAmount = Repository.Get().Where(x => x.PersonLoanedFrom.Id == id).Select(x => x.Amount).DefaultIfEmpty(0).Sum();
                 totalModel.TotalActive = totalAmount - totalModel.TotalPaidOff;
                 return Ok(totalModel);
             }
@@ -33,13 +33,13 @@ namespace LoansTracking.WebApi.Controllers
         }
 
 
-        [Route("api/statistics/paidoff")]
+        [Route("api/statistics/paidoff/{id}")]
         [HttpGet]
-        public IHttpActionResult GetAll()
+        public IHttpActionResult GetAll(int id)
         {
             try
             {
-                var AllPaidOffLoans = Repository.Get().Where(x => x.PaidOff).ToList().Select(x => Factory.Create(x)).ToList();
+                var AllPaidOffLoans = Repository.Get().Where(x => x.PersonLoanedFrom.Id == id && x.PaidOff).ToList().Select(x => Factory.Create(x)).ToList();
                 if (AllPaidOffLoans.Count != 0)
                 {
                     return Ok(AllPaidOffLoans);
