@@ -15,7 +15,7 @@
         $scope.login = function (username, password) {
             (username === $scope.credentials.temporaryUsername && password === $scope.credentials.temporaryPassword) ?
                 $location.path('/loans') : $scope.showErrorMessage = true;
-            authService.putCookie(username);
+            authService.putCookie(username, 1);
         }
 
     }

@@ -1,12 +1,12 @@
 ﻿(angular.module('app')
     .service('statisticsService', function (dataService) {
 
-        this.getTotalStatistics = function () {
-            return dataService.get(totalStatisticsUrl);
+        this.getTotalStatistics = function (currentUserId) {
+            return dataService.getById(totalStatisticsUrl, currentUserId);
         };
 
-        this.getPaidStatistics = function () {
-            return dataService.get(paidOffStatitsticsUrl);
+        this.getPaidStatistics = function (currentUserId) {
+            return dataService.getById(paidOffStatitsticsUrl, currentUserId);
         };
     })
 );
