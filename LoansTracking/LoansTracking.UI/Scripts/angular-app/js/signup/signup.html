@@ -1,15 +1,94 @@
-<div class="login-border" style="top: 15%;">
-    <div class="forceColor"></div>
-    <div class="topbar">
-        <div class="spanColor"></div>
-        <input type="text" class="input" placeholder="First name" name="firstName" autocomplete="off" required="required" data-ng-model="firstName">
-        <input type="text" class="input" placeholder="Last name" name="lastName" autocomplete="off" required="required" data-ng-model="lastName">
-        <input type="email" class="input" placeholder="Email" name="email" autocomplete="off" required="required" data-ng-model="email">
-        <input type="password" autocomplete="off" class="input" placeholder="Password" name="password" required="required" data-ng-model="password">
-        <input type="password" autocomplete="off" class="input" placeholder="Cofirm Password" name="confirmPassword" required="required" data-ng-model="confirmPassword">
+<div class="sign-up container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form role="form">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="input" placeholder="First name" name="firstName" autocomplete="off" required="required" data-ng-model="user.firstName">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="input" placeholder="Last name" name="lastName" autocomplete="off" required="required" data-ng-model="user.lastName">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="height:53px;">
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="text" id="dateOfBirth" placeholder="Date of Birth" name="dateOfBirth" class="input" uib-datepicker-popup="{{format}}" data-ng-model="user.dateOfBirth" is-open="birthDate.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" required="required" />
+                        </div>
+                        <div class="col-md-2">
+                            <span>
+                                <button type="button" class="btn btn-default input" ng-click="openBirthDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <select id="user_gender" class="dropdown" data-ng-model="user.gender" required="required">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="height:53px;">
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="text" class="input" placeholder="Mobile number" name="mobileNumber" autocomplete="off" required="required" data-ng-model="user.mobileNumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="height:53px;">
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="text" class="input" placeholder="Address" name="address" autocomplete="off" required="required" data-ng-model="user.address">
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="text" class="input" placeholder="Location" name="location" autocomplete="off" required="required" data-ng-model="user.location">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="height:53px;">
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="text" class="input" placeholder="Company" name="company" autocomplete="off" required="required" data-ng-model="user.company">
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="text" class="input" placeholder="Occupation" name="occupation" autocomplete="off" required="required" data-ng-model="user.occupation">
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row" style="height:53px;">
+                    <div class="form-group">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <input type="email" class="input" placeholder="Email" name="email" autocomplete="off" required="required" data-ng-model="user.email">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="height:53px;">
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="password" autocomplete="off" class="input" placeholder="Password" name="password" required="required" data-ng-model="user.password">
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="password" autocomplete="off" class="input" placeholder="Cofirm Password" name="confirmPassword" required="required" data-ng-model="confirmPassword">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <button class="btn btn-block submit" id="submit2" data-ng-click="signUp(user)" style="margin-top: 5px;">Create account</button>
+                        </div>
+                        <div>
+                            <p data-ng-show="showErrorMessage" style="color: red; text-align: center;font-weight: 700">Confirm password and password do not match.</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <button class="submit" id="submit2" data-ng-click="createAccount(firstName, lastName, email, password)" style="margin-top: 5px;">Sign up</button>
-    <p data-ng-show="showErrorMessage" style="color: red; text-align: center;font-weight: 700">Username and password do not match</p>
 </div>
-
-

@@ -437,6 +437,23 @@ body {
             transition: all 400ms linear;
         }
 
+.sign-up {
+    margin: 0 auto;
+    position: fixed;
+    top: 20%;
+    -moz-transform: translate3d(-50%, 0, 0);
+    -ms-transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    padding: 20px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
 .topbar.error .spanColor {
     width: calc(100% - 39px);
     border-top-left-radius: 6px;
@@ -753,7 +770,7 @@ label {
         color: #ffffff;
     }
 
-input, textarea {
+input, textarea, select {
     font-size: 22px;
     display: block;
     width: 100%;
@@ -765,7 +782,7 @@ input, textarea {
     color: #ffffff;
     border-radius: 0;
     -webkit-transition: border-color .25s ease, box-shadow .25s ease;
-    transition: border-color .25s ease, box-shadow .25s ease;
+    /*transition: border-color .25s ease, box-shadow .25s ease;*/
 }
 
     input:focus, textarea:focus {

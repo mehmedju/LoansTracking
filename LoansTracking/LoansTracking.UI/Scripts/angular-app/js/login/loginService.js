@@ -1,17 +1,21 @@
 ﻿(angular.module('app')
-    .factory('loginService', function () {
-        'use strict';
+    .service('loginService', function (dataService) {
+        
+        //function getTemporaryCredentials() {
+        //    var credentials = {
+        //        temporaryUsername: "admin",
+        //        temporaryPassword: "password"
+        //    }
+        //    return credentials;
+        //}
 
-        function getTemporaryCredentials() {
-            var credentials = {
-                temporaryUsername: "admin",
-                temporaryPassword: "password"
-            }
-            return credentials;
-        }
+        //return {
+        //    getTemporaryCredentials: getTemporaryCredentials
+        //}
 
-        return {
-            getTemporaryCredentials: getTemporaryCredentials
-        }
+        this.login = function (data) {
+            return dataService.post(loginUrl, data);
+        };
+
     }
-    ));
+));

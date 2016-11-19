@@ -16,16 +16,18 @@ namespace LoansTracking.WebApi.Controllers
         public IHttpActionResult Post (LoginModel model)
         {
             bool isMember = false;
+            int id = 0;
             var allPeople = Repository.Get().ToList().Select(x => Factory.Create(x)).ToList();
-            foreach(var person in allPeople)
+            foreach (var person in allPeople)
             {
-                if(model.Email == person.Email && model.Password == person.Password)
+                if (model.Email == person.Email && model.Password == person.Password)
                 {
                     isMember = true;
+                    id = person.Id;
                 }
             }
             if (isMember)
-                return Ok();
+                return Ok(id);
             else
                 return BadRequest();
         }

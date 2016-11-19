@@ -1,8 +1,8 @@
 ﻿(angular.module('app')
     .factory('authService', function ($cookies) {
 
-        function putCookie(username) {
-            $cookies.put('authData', username);
+        function putCookie(id) {
+            $cookies.put('authData', id);
         }
 
         function getCookie() {
