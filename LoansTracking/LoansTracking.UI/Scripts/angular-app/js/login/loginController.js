@@ -4,19 +4,19 @@
 
         angular.extend($scope, {
             showErrorMessage: false,
-            user: {},
-            credentials:loginService.getTemporaryCredentials()
+            user: {}
         });
 
         $scope.goToSignup = function () {
             $location.path('/signup');
         }
 
-        $scope.login = function (username, password) {
-            (username === $scope.credentials.temporaryUsername && password === $scope.credentials.temporaryPassword) ?
-                $location.path('/loans') : $scope.showErrorMessage = true;
-            authService.putCookie(username);
-        }
-
+        $scope.login = function (user) {
+            loginService.login(user).then(function (data) {
+                $scope.userID = data;
+                $location.path('/loans');
+                authService.putCookie($scope.userID);
+            });
+        };
     }
-    ]));
+]));

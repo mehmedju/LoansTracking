@@ -1,31 +1,18 @@
 ﻿(angular.module('app')
-    .controller('profileController', ['$scope', 'profileService', function ($scope, profileService) {
+    .controller('profileController', ['$scope', 'profileService', 'authService', function ($scope, profileService, authService) {
         'use strict';
 
         angular.extend($scope, {
-            //change user to get currently logged in user
-            user : {
-                id: 3,
-                firstName: "Angular",
-                lastName: "User",
-                dateOfBirth: new Date(),
-                gender: "Male",
-                mobileNumber: "033 987 654",
-                address: "Milana Preloga 12",
-                location: "Sarajevo, BiH",
-                occupation: "Software developer",
-                company: "Mistral",
-                email: "angular@mistral.com",
-                password: "martina"
-            },
+            user: {},
             birthDate: {
                 opened: false
             },
             successful: false,
-        });             
+        });
 
-        //hardcoded - change this 
-        profileService.getLoggedUser(5).then(function (data) {
+        //get id of logged user from cookies
+        $scope.loggedUserID = authService.getCookie();
+        profileService.getLoggedUser($scope.loggedUserID).then(function (data) {
             $scope.loggedUser = data;
         });
 
