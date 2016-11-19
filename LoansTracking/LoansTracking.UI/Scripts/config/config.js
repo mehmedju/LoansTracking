@@ -7,3 +7,6 @@ var paidOffStatitsticsUrl = baseRoute + 'statistics/paidoff/';
 
 //people
 var peopleUrl = baseRoute + 'people/';
+
+//login
+var loginUrl = baseRoute + 'login';

@@ -7,12 +7,12 @@
             currentUser: authService.getCookie()
         });
 
-        statisticsService.getTotalStatistics($scope.currentUser.userId).then(function (data) {
+        statisticsService.getTotalStatistics($scope.currentUser).then(function (data) {
             $scope.totalActive = data.totalActive;
             $scope.totalPaidOff = data.totalPaidOff;
         });
 
-        statisticsService.getPaidStatistics($scope.currentUser.userId).then(function (data) {
+        statisticsService.getPaidStatistics($scope.currentUser).then(function (data) {
             $scope.allStatistics = data;
         });
     }
