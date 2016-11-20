@@ -6,9 +6,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr data-ng-repeat="note in allNotes | filter:{title:search}" data-ng-click="editNote(note)">
+        <tr data-ng-repeat="note in allNotes | searchNotesFilter:search" data-ng-click="editNote(note)">
             <td>{{note.title}}</td>
-            <td>{{note.note}}</td>
+            <td>{{note.text}}</td>
         </tr>
     </tbody>
 </table>

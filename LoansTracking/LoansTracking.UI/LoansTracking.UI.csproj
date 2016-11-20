@@ -117,6 +117,7 @@
     <Content Include="Scripts\angular-app\js\notes\partials\notesListDirective.js" />
     <Content Include="Scripts\angular-app\js\notes\partials\rightPanelNotes.html" />
     <Content Include="Scripts\angular-app\js\notes\partials\rightPanelNotesController.js" />
+    <Content Include="Scripts\angular-app\js\notes\partials\searchNotesFilter.js" />
     <Content Include="Scripts\angular-app\js\profile\profileService.js" />
     <Content Include="Scripts\angular-app\js\signup\signup.html" />
     <Content Include="Scripts\angular-app\js\signup\signupController.js" />
