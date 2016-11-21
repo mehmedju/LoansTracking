@@ -5,6 +5,10 @@
         $scope.getCurrentLocation = function () {
             return $location.path();
         };
+
+        $scope.tempMethod=function() {
+            return 3;
+        }
     }
     ]));
 
