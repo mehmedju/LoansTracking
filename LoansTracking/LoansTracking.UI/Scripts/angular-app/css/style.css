@@ -547,9 +547,12 @@ td.uib-day button.active {
 }
 
 .loansModeContent .form-group {
-    margin-top: 10px !important;
+    margin-top: 10px;
 }
-
+ 
+ .loansModeContent .form-group.margin-top-5 {
+    margin-top: 5px;
+}
 .rightPanel {
     background-color: #eeeeee;
     padding-top: 10px;
@@ -771,26 +774,6 @@ label {
         color: #ffffff;
     }
 
-input, textarea, select {
-    font-size: 22px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 5px 10px;
-    background: none;
-    background-image: none;
-    border: 1px solid #a0b3b0;
-    color: #ffffff;
-    border-radius: 0;
-    -webkit-transition: border-color .25s ease, box-shadow .25s ease;
-    /*transition: border-color .25s ease, box-shadow .25s ease;*/
-}
-
-    input:focus, textarea:focus {
-        outline: 0;
-        border-color: #1ab188;
-    }
-
 textarea {
     border: 2px solid #a0b3b0;
     resize: vertical;
@@ -870,4 +853,10 @@ textarea {
 .search {
         width: 200px;
     float: left;
+}
+.form-control{
+    margin-bottom: 5px;
+}
+.padding-0{
+    padding: 0 !important;
 }
