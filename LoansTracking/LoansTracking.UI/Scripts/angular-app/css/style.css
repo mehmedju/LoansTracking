@@ -1,0 +1,862 @@
+﻿@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+.center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*  HEADER   */
+
+.header-login-signup {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px #ccc;
+    padding: 10px 20px 5px 130px;
+    height: 60px;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+    .header-login-signup .header-limiter {
+        max-width: 1200px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+        /* Logo */
+
+        .header-login-signup .header-limiter h1 {
+            float: left;
+            font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+            line-height: 40px;
+            margin: 0;
+        }
+
+            .header-login-signup .header-limiter h1 span {
+                color: #5383d3;
+            }
+
+        /* The navigation links */
+
+        .header-login-signup .header-limiter a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .header-login-signup .header-limiter nav {
+            font: 16px Arial, Helvetica, sans-serif;
+            line-height: 40px;
+            float: left;
+            margin: 0 0 0 60px;
+            padding: 0;
+        }
+
+            .header-login-signup .header-limiter nav a {
+                font-size: 14px;
+                display: inline-block;
+                padding: 0 5px;
+                opacity: 0.9;
+                text-decoration: none;
+                line-height: 1;
+            }
+
+                .header-login-signup .header-limiter nav a:hover {
+                    opacity: 1;
+                }
+
+                .header-login-signup .header-limiter nav a.selected {
+                    color: #608bd2;
+                    font-weight: 300;
+                }
+
+        .header-login-signup .header-limiter ul li a.selected {
+            color: #608bd2;
+            font-weight: 300;
+        }
+
+        /* Login/Sign up buttons */
+
+        .header-login-signup .header-limiter ul {
+            font: 14px Arial, Helvetica, sans-serif;
+            list-style: none;
+            line-height: 1;
+            float: right;
+        }
+
+            .header-login-signup .header-limiter ul li {
+                display: inline-block;
+                margin-left: 15px;
+                opacity: 0.9;
+            }
+
+                .header-login-signup .header-limiter ul li:hover {
+                    opacity: 1;
+                }
+
+                /* The sign up button */
+
+                .header-login-signup .header-limiter ul li:last-child a {
+                    font-weight: bold;
+                    background-color: #3a3c3e;
+                    padding: 10px 15px;
+                    border-radius: 3px;
+                }
+
+/* Making the header responsive */
+
+@media all and (max-width: 600px) {
+
+    .header-login-signup {
+        padding: 25px;
+        height: 85px;
+    }
+
+        .header-login-signup .header-limiter h1 {
+            float: none;
+            margin: -8px 0 2px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        .header-login-signup .header-limiter nav {
+            margin: 0;
+            float: none;
+        }
+
+            .header-login-signup .header-limiter nav li a {
+                font-size: 13px;
+            }
+
+        .header-login-signup .header-limiter ul {
+            display: none;
+        }
+}
+
+/* login*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.background-img {
+     background-image: url('../img/city.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+body {
+    font-size: 62.5%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-family: Raleway; 
+    background-position: 50%;
+    -webkit-font-smoothing: antialiased;
+}
+
+    body .menu {
+        position: absolute;
+        width: 100%;
+        background: inherit;
+    }
+
+        body .menu .mainmenu {
+            background: url(https://newevolutiondesigns.com/images/freebies/city-wallpaper-18.jpg) no-repeat fixed;
+            background-size: cover;
+            background-position: 50%;
+        }
+
+            body .menu .mainmenu:before {
+                position: absolute;
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: inherit;
+                -webkit-filter: blur(3px);
+                filter: blur(3px);
+            }
+
+            body .menu .mainmenu:after {
+                clear: both;
+                content: "";
+                display: block;
+            }
+
+            body .menu .mainmenu .menuitem {
+                float: left;
+                width: 10%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                text-align: center;
+                cursor: pointer;
+                color: white;
+                font-size: 1.5rem;
+            }
+
+    body #findpass {
+        top: 50%;
+        left: 5%;
+        padding: 10px 20px;
+        width: auto;
+        background: white;
+        color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        background: rgba(255, 255, 255, 0.5);
+        border: none;
+        font-size: 1.2rem;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        -moz-transform: translate3d(0, -50%, 0);
+        -ms-transform: translate3d(0, -50%, 0);
+        -webkit-transform: translate3d(0, -50%, 0);
+        transform: translate3d(0, -50%, 0);
+    }
+
+        body #findpass:focus {
+            outline: none;
+        }
+
+    body .article {
+        width: 960px;
+        font-size: 1.4rem;
+        margin: 20px auto;
+        color: white;
+        opacity: 0;
+        visibility: hidden;
+        -moz-transition: opacity 400ms linear;
+        -o-transition: opacity 400ms linear;
+        -webkit-transition: opacity 400ms linear;
+        transition: opacity 400ms linear;
+        -moz-transition-delay: 800ms;
+        -o-transition-delay: 800ms;
+        -webkit-transition-delay: 800ms;
+        transition-delay: 800ms;
+        top: 0;
+        position: relative;
+    }
+
+        body .article.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        body .article h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.login-border {
+    margin: 0 auto;
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    -moz-transform: translate3d(-50%, 0, 0);
+    -ms-transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    width: 350px;
+    padding: 20px;
+    overflow: hidden;
+    background-color: black;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: inherit;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
+    .login-border .forceColor {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .login-border:before {
+        content: "";
+        width: 110%;
+        height: 110%;
+        position: absolute;
+        background: inherit;
+        left: -5%;
+        right: 0;
+        bottom: 0;
+        top: -5%;
+        -webkit-filter: blur(3px);
+        filter: blur(3px);
+    }
+
+    .login-border.goAway {
+        opacity: 0;
+        -moz-transform: scale(0.6) translate3d(-50%, 0, 0);
+        -ms-transform: scale(0.6) translate3d(-50%, 0, 0);
+        -webkit-transform: scale(0.6) translate3d(-50%, 0, 0);
+        transform: scale(0.6) translate3d(-50%, 0, 0);
+        -moz-transition: -moz-transform 200ms ease-in-out, opacity 100ms linear;
+        -o-transition: -o-transform 200ms ease-in-out, opacity 100ms linear;
+        -webkit-transition: -webkit-transform 200ms ease-in-out, opacity 100ms linear;
+        transition: transform 200ms ease-in-out, opacity 100ms linear;
+        -moz-transition-delay: 600ms;
+        -o-transition-delay: 600ms;
+        -webkit-transition-delay: 600ms;
+        transition-delay: 600ms;
+    }
+
+    .login-border .topbar .spanColor {
+        position: absolute;
+        width: 0px;
+        right: 20px;
+        height: 43px;
+        opacity: 0.2;
+        background-color: white;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        -moz-transition: width 150ms ease-in-out, background-color 150ms ease-in-out 250ms, border 150ms ease-in-out 250ms;
+        -o-transition: width 150ms ease-in-out, background-color 150ms ease-in-out 250ms, border 150ms ease-in-out 250ms;
+        -webkit-transition: width 150ms ease-in-out, background-color 150ms ease-in-out, border 150ms ease-in-out;
+        -webkit-transition-delay: 0s, 250ms, 250ms;
+        transition: width 150ms ease-in-out, background-color 150ms ease-in-out 250ms, border 150ms ease-in-out 250ms;
+    }
+
+    .login-border .topbar .input {
+        display: block;
+        width: 100%;
+        position: relative;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        font-size: 1rem;
+        background: transparent;
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        border-left: 1px solid rgba(255, 255, 255, 0.4);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        border-right: 1px solid rgba(255, 255, 255, 0.4);
+        margin-bottom: 25px;
+        color: rgba(255, 255, 255, 0.4);
+        padding: 10px 20px;
+    }
+
+        .login-border .topbar .input::-webkit-input-placeholder {
+            color: white;
+            font-size: 1.2rem;
+            font-family: Raleway;
+            line-height: 1.3rem;
+            font-weight: 200;
+        }
+
+        .login-border .topbar .input:focus {
+            outline: none;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .login-border .topbar .input.disabled:hover {
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .login-border .topbar .input:hover {
+            border: 1px solid white;
+        }
+
+    .login-border .submit {
+        padding: 10px 20px;
+        width: 100%;
+        font-size: 1.2rem;
+        font-family: Raleway;
+        font-weight: 200;
+        display: block;
+        color: white;
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.5);
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+        .login-border .submit:focus {
+            outline: none;
+        }
+
+        .login-border .submit:hover {
+            color: white;
+            border: 1px solid white;
+        }
+
+        .login-border .submit.recover {
+            background: #FF2B4B;
+            color: white !important;
+            border: 1px solid white !important;
+            transition: all 400ms linear;
+        }
+
+.sign-up {
+    margin: 0 auto;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    -moz-transform: translate3d(-50%, 0, 0);
+    -ms-transform: translate3d(-50%, 0, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    padding: 20px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
+.topbar.error .spanColor {
+    width: calc(100% - 39px);
+    border-top-left-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom-left-radius: 6px;
+    background-color: #FF2B4B;
+}
+
+.topbar.error + .submit {
+    color: white;
+}
+
+.topbar.error .input {
+    color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+    .topbar.error .input::-webkit-input-placeholder {
+        color: white;
+    }
+
+.topbar.success .spanColor {
+    width: calc(100% - 39px);
+    border-top-left-radius: 6px;
+    border: 1px solid #26C97D;
+    border-bottom-left-radius: 6px;
+    background-color: #26C97D;
+}
+
+.topbar.success + .submit {
+    color: white;
+    border: 1px solid white;
+}
+
+.topbar.success .input {
+    color: white;
+    border: 1px solid #26C97D;
+}
+
+    .topbar.success .input::-webkit-input-placeholder {
+        color: white;
+    }
+
+
+/* Loans screen CSS starts */
+
+.container.loans {
+    padding-top: 20px;
+    margin: 20px auto;
+    background-color: #fff;
+}
+
+.btn-edit, .btn-delete {
+    padding: 0px;
+    margin: 0px auto;
+    display: block;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    background-color: transparent;
+}
+
+td.uib-day button.active {
+    background-color: #ccc !important;
+}
+
+.btn-edit {
+    color: #009688;
+}
+
+.btn-delete {
+    color: #f44336;
+}
+
+.th-center {
+    text-align: center !important;
+}
+
+.modeTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #286090;
+}
+
+.loansModeContent label {
+    font-size: 12px !important;
+}
+
+.loansModeContent .form-group {
+    margin-top: 10px;
+}
+ 
+ .loansModeContent .form-group.margin-top-5 {
+    margin-top: 5px;
+}
+.rightPanel {
+    background-color: #eeeeee;
+    padding-top: 10px;
+}
+
+table.custom-responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.add-loan-btn {
+    margin-bottom: 20px !important;
+}
+
+.all-payments {
+    font-size: 16px !important;
+    line-height: 40px !important;
+    font-weight: bold;
+}
+
+.badge.red {
+    background-color: #f44336 !important;
+}
+
+.loan-due-date:focus {
+    outline: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.dp-btn {
+    bottom: -15px !important;
+}
+
+/* Zebra striping */
+.custom-responsive-table tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+.custom-responsive-table th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+
+.custom-responsive-table td, .custom-responsive-table th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+
+    /* Force table to not be like tables anymore */
+    table.custom-responsive-table, .custom-responsive-table thead, .custom-responsive-table tbody, .custom-responsive-table th, .custom-responsive-table td, .custom-responsive-table tr {
+        display: block;
+    }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        .custom-responsive-table thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+    .custom-responsive-table tr {
+        border: 1px solid #ccc;
+    }
+
+    .custom-responsive-table td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+        .custom-responsive-table td:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+        }
+
+    /*
+	Label the data
+	*/
+    .custom-responsive-table.loans-table td:nth-of-type(1):before {
+        content: "Name";
+    }
+
+    .custom-responsive-table.loans-table td:nth-of-type(2):before {
+        content: "Surname";
+    }
+
+    .custom-responsive-table.loans-table td:nth-of-type(3):before {
+        content: "Status";
+    }
+
+    .custom-responsive-table.loans-table td:nth-of-type(4):before {
+        content: "Due date";
+    }
+}
+
+/* Loans screen CSS ends */
+
+/*login*/
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+a {
+    text-decoration: none;
+    color: #1ab188;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+}
+
+    a:hover {
+        color: #179b77;
+    }
+
+.form {
+    background: rgba(19, 35, 47, 0.9);
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.tab-group {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+    .tab-group:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .tab-group li a {
+        display: block;
+        text-decoration: none;
+        padding: 15px;
+        background: rgba(160, 179, 176, 0.25);
+        color: #a0b3b0;
+        font-size: 20px;
+        float: left;
+        width: 50%;
+        text-align: center;
+        cursor: pointer;
+        -webkit-transition: .5s ease;
+        transition: .5s ease;
+    }
+
+        .tab-group li a:hover {
+            background: #179b77;
+            color: #ffffff;
+        }
+
+    .tab-group .active a {
+        background: #1ab188;
+        color: #ffffff;
+    }
+
+.tab-content > div:last-child {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 300;
+    margin: 0 0 40px;
+}
+
+label {
+    position: absolute;
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+    left: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    -webkit-backface-visibility: hidden;
+    pointer-events: none;
+    font-size: 22px;
+}
+
+    label .req {
+        margin: 2px;
+        color: #1ab188;
+    }
+
+    label.active {
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+        left: 2px;
+        font-size: 14px;
+    }
+
+        label.active .req {
+            opacity: 0;
+        }
+
+    label.highlight {
+        color: #ffffff;
+    }
+
+textarea {
+    border: 2px solid #a0b3b0;
+    resize: vertical;
+}
+
+.field-wrap {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.top-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.top-row > div {
+    float: left;
+    width: 48%;
+    margin-right: 4%;
+}
+
+    .top-row > div:last-child {
+        margin: 0;
+    }
+
+.button {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    padding: 15px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background: #1ab188;
+    color: #ffffff;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-appearance: none;
+}
+
+    .button:hover, .button:focus {
+        background: #179b77;
+    }
+
+.button-block {
+    display: block;
+    width: 100%;
+}
+
+.forgot {
+    margin-top: -20px;
+    text-align: right;
+}
+
+.control-label {
+    color: #222;
+    font-size: 12px;
+}
+
+.colorgraph {
+    height: 5px;
+    border-top: 0;
+    background: #c4e17f;
+    border-radius: 5px;
+    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+.text-danger {
+    color: red;
+}
+
+.search {
+        width: 200px;
+    float: left;
+}
+.form-control{
+    margin-bottom: 5px;
+}
+.padding-0{
+    padding: 0 !important;
+}

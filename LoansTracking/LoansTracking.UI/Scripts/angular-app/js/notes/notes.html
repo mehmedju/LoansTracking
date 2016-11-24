@@ -1,0 +1,13 @@
+﻿<div data-ng-include="'Scripts/angular-app/views/header.html'"></div>
+<div class="container loans">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <input class="form-control search" placeholder="Search..." data-ng-model="search"/>
+            <button type="button" class="btn btn-primary btn-raised pull-right add-loan-btn" data-ng-click="addNewNote()">Add new note</button>
+           <notes-list all-notes="allNotes" search="search"></notes-list>
+        </div>
+        <div data-ng-include="'Scripts/angular-app/js/notes/partials/rightPanelNotes.html'"></div>
+    </div>
+</div>
+
+

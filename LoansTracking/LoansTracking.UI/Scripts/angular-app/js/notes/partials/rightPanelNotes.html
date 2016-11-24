@@ -1,0 +1,21 @@
+﻿<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 loansModeContent rightPanel" data-ng-controller="rightPanelNotesController">
+    <span class="modeTitle">{{addMode ? 'Add new note' : 'Edit note'}}</span>
+    <form novalidate role="form" name="form">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter a title" required ng-minlength="3" ng-model="note.title">
+            <span ng-show="form.title.$touched && form.title.$error.required" class="text-danger">Title is required!</span>
+            <span ng-show="form.title.$touched && form.title.$invalid" class="text-danger">Title must be at least three characters!</span>
+        </div>
+        <div class="form-group">
+            <label for="note">Note:</label>
+            <textarea class="form-control" id="note" name="note" placeholder="Enter a note" required ng-minlength="20" ng-model="note.note"></textarea>
+            <span ng-show="form.note.$touched && form.note.$error.required" class="text-danger">Note is required!</span>
+            <span ng-show="form.note.$touched && form.note.$invalid" class="text-danger">Note must be at least 20 characters!</span>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-default btn-raised">Cancel</button>
+            <button type="button" class="btn btn-primary btn-raised" ng-disabled="form.$invalid" ng-click="createNote()">Save</button>
+        </div>
+    </form>
+</div>
