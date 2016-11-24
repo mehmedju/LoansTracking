@@ -114,7 +114,6 @@
     <Content Include="Scripts\angular-app\js\login\loginService.js" />
     <Content Include="Scripts\angular-app\js\notes\notesService.js" />
     <Content Include="Scripts\angular-app\js\notes\partials\notesList.html" />
-    <Content Include="Scripts\angular-app\js\notes\partials\notesListController.js" />
     <Content Include="Scripts\angular-app\js\notes\partials\notesListDirective.js" />
     <Content Include="Scripts\angular-app\js\notes\partials\rightPanelNotes.html" />
     <Content Include="Scripts\angular-app\js\notes\partials\rightPanelNotesController.js" />
