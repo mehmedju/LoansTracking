@@ -48,15 +48,18 @@ namespace LoansTracking.WebApi.Controllers
         {
             try
             {   //TO DO get username from cookie
-                model.PersonLoanedFrom = 1;
+                Repository<Person> peopleRepo = new Repository<Person>(Repository.BaseContext());
+                model.PersonLoanedFrom = peopleRepo.Get().Where(x => x.Email == "admin").Select(x => x.Id).FirstOrDefault();
                 
-                if(Repository.Get().Where(x => x.PersonLoanedTo.Id == model.PersonLoanedTo).FirstOrDefault() == null)
+                if(Repository.Get().Where(x => x.PersonLoanedTo.FirstName == model.PersonLoanedToName && x.PersonLoanedTo.LastName == model.PersonLoanedToSurname).FirstOrDefault() == null)
                 {
                     new Repository<Person>(Repository.BaseContext()).Insert(new Person()
                     {
                         FirstName = model.PersonLoanedToName,
                         LastName = model.PersonLoanedToSurname,
-                        DateOfBirth = DateTime.Now.AddYears(-DateTime.Now.Second)
+                        DateOfBirth = DateTime.Now.AddYears(-DateTime.Now.Second),
+                        Email = model.PersonLoanedToName + "test",
+                        Password = "dGVzdA=="
                     });
                     model.PersonLoanedTo = new Repository<Person>(Repository.BaseContext()).Get().Where(x => x.FirstName == model.PersonLoanedToName && x.LastName == model.PersonLoanedToSurname).Select(x => x.Id).FirstOrDefault();
                     Loan Loan = Parser.Create(model, Repository.BaseContext());
