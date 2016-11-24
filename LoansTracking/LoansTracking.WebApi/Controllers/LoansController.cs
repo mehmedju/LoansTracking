@@ -4,6 +4,7 @@ using System.Web.Http;
 using LoansTracking.DB.Entities;
 using LoansTracking.DB.DataAccess;
 using LoansTracking.WebApi.Models;
+using System.Collections.Generic;
 
 namespace LoansTracking.WebApi.Controllers
 {
@@ -35,7 +36,7 @@ namespace LoansTracking.WebApi.Controllers
         {
             try
             {
-                return Ok(Repository.Get().ToList().Select(x => Factory.Create(x)).ToList());
+                return Ok(Repository.Get().Where(x => !x.PaidOff).ToList().Select(x => Factory.Create(x)).ToList());
             }
             catch (Exception ex)
             {
@@ -46,9 +47,18 @@ namespace LoansTracking.WebApi.Controllers
         public IHttpActionResult Post(LoanModel model)
         {
             try
-            {
+            {   //TO DO get username from cookie
+                model.PersonLoanedFrom = 1;
+                
                 if(Repository.Get().Where(x => x.PersonLoanedTo.Id == model.PersonLoanedTo).FirstOrDefault() == null)
                 {
+                    new Repository<Person>(Repository.BaseContext()).Insert(new Person()
+                    {
+                        FirstName = model.PersonLoanedToName,
+                        LastName = model.PersonLoanedToSurname,
+                        DateOfBirth = DateTime.Now.AddYears(-DateTime.Now.Second)
+                    });
+                    model.PersonLoanedTo = new Repository<Person>(Repository.BaseContext()).Get().Where(x => x.FirstName == model.PersonLoanedToName && x.LastName == model.PersonLoanedToSurname).Select(x => x.Id).FirstOrDefault();
                     Loan Loan = Parser.Create(model, Repository.BaseContext());
                     Repository.Insert(Loan);
                     var newLoan = Repository.Get().OrderByDescending(x => x.Id).FirstOrDefault();
@@ -73,9 +83,16 @@ namespace LoansTracking.WebApi.Controllers
                 if (loan == null)
                 {
                     return NotFound();
-                }                 
+                }
                 else
                 {
+                    var loanedTo = new Repository<Person>(Repository.BaseContext()).Get(model.PersonLoanedTo);
+                    if (model.PersonLoanedToName != loanedTo.FirstName || model.PersonLoanedToSurname != loanedTo.LastName)
+                    {
+                        loanedTo.FirstName = model.PersonLoanedToName;
+                        loanedTo.LastName = model.PersonLoanedToSurname;
+                        new Repository<Person>(Repository.BaseContext()).Update(loanedTo, loanedTo.Id);            
+                    }
                     Repository.Update(Parser.Create(model, Repository.BaseContext()), loan.Id);
                     var newLoan = Factory.Create(Repository.Get(model.Id));
                     if(newLoan.Status <= 0)
@@ -108,6 +125,12 @@ namespace LoansTracking.WebApi.Controllers
                 }                   
                 else
                 {
+                    List<Payment> payments = new List<Payment>();
+                    payments.AddRange(loan.Payments);
+                    foreach(var payment in payments)
+                    {
+                        new Repository<Payment>(Repository.BaseContext()).Delete(payment.Id);
+                    }
                     Repository.Delete(id);
                     return Ok();
                 }

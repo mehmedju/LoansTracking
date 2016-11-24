@@ -13,8 +13,8 @@
             return dataService.post(loansUrl, data);
         };
 
-        this.updateLoan = function (data) {
-            return dataService.put(loansUrl, data);
+        this.updateLoan = function (data,id) {
+            return dataService.put(loansUrl, data,id);
         };
 
         this.deleteLoan = function (id) {
