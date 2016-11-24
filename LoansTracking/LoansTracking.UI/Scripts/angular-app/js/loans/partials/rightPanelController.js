@@ -1,13 +1,7 @@
 ﻿(angular.module('app')
-    .controller('rightPanelController', ['$scope', '$uibModal', 'loansService', function ($scope, $uibModal, loansService) {
+    .controller('rightPanelController', ['$scope', '$uibModal', 'loansService', 'paymentsService', function ($scope, $uibModal, loansService, paymentsService) {
         'use strict';
-        $scope.openAllPaymentsModal = function () {
-            $uibModal.open({
-                templateUrl: 'Scripts/angular-app/js/loans/partials/allPaymentsModal.html',
-                controller: 'allPaymentsModalController'
-            });
-        };
-
+        
         $scope.openDatepicker1 = function () {
             $scope.datepicker1.opened = true;
         };
@@ -23,19 +17,66 @@
         $scope.datepicker2 = {
             opened: false
         };
-        $scope.createLoan = function () {
-            $scope.newLoan = {
-                id: 0,
-                person: 12,
-                firstName: $scope.loan.name,
-                lastName: $scope.loan.surname,
-                amount: $scope.amount,
-                dueDate: Date.now
-            };
-            loansService.createLoans($scope.newLoan);
+        $scope.$on("editLoan",function(ev, args){
+            $scope.loan = args;
+            $scope.editMode = true;
+            $scope.addMode = false;
+        });
+        $scope.$on("addNewLoan", function (ev, args) {
+            $scope.loan = {};
+            $scope.addMode = true;
+            $scope.editMode = false;
+        });
+
+        $scope.addLoan = function (loan) {
+            loansService.createLoans(loan).then(function (data) {
+                $scope.addMode = false;
+                $scope.loan = {};
+                $scope.$emit("reloadLoans");
+            });
         };
 
-        $scope.amount = 400;
-        $scope.payments = [200, 30, 50];
+        $scope.deleteLoan = function(id){
+            loansService.deleteLoan(id).then(function (data) {
+                $scope.addMode = false;
+                $scope.editMode = false;
+                $scope.loan = {};
+                $scope.$emit("reloadLoans");
+            });
+        }
+        $scope.editLoan = function (data) {
+            console.log("here I am")
+            loansService.updateLoan(data,data.id).then(function (data) {
+                $scope.addMode = false;
+                $scope.editMode = false;
+                $scope.loan = {};
+                $scope.$emit("reloadLoans");
+            });
+        };
+
+        $scope.addPayment = function (payment) {
+            payment.loanId = $scope.loan.id;
+            paymentsService.createPayments(payment).then(function (data) {
+                $scope.showPayment = false;
+                $scope.payment = {};
+                loansService.getLoansById($scope.loan.id).then(function (data) {
+                    $scope.loan = data;
+                });
+                $scope.$emit("reloadLoans");
+            });
+        };
+
+        $scope.openAllPaymentsModal = function (data) {
+            $uibModal.open({
+                templateUrl: 'Scripts/angular-app/js/loans/partials/allPaymentsModal.html',
+                controller: 'allPaymentsModalController',
+                resolve: {
+                    loan:data
+                }
+            }).result.then(function (result) {
+                console.log("here");
+                $scope.$emit("reloadLoans");
+            });
+        };
     }])
 );

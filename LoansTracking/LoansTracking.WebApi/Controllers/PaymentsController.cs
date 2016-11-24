@@ -18,10 +18,12 @@ namespace LoansTracking.WebApi.Controllers
         {
             try
             {
+                var loan = Factory.Create(new Repository<Loan>(Repository.BaseContext()).Get(model.LoanId));
+                model.PaidById = loan.PersonLoanedTo;
                 Payment payment = Parser.Create(model, Repository.BaseContext());
+                              
                 Repository.Insert(payment);
-                var loan = Factory.Create(new Repository<Loan>(Repository.BaseContext()).Get(payment.Loan.Id));
-                
+                                
                 if (loan.Status <= 0)
                 {
                     loan.PaidOff = true;
@@ -66,6 +68,28 @@ namespace LoansTracking.WebApi.Controllers
                         new Repository<Loan>(Repository.BaseContext()).Update(Parser.Create(loan, Repository.BaseContext()), loan.Id);
                     }
                     return Ok(model);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message.ToString());
+            }
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            try
+            {
+                Payment payment = Repository.Get(id);
+                if (payment == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    
+                    Repository.Delete(id);
+                    return Ok();
                 }
             }
             catch (Exception ex)

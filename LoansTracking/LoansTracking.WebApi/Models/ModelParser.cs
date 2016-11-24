@@ -47,7 +47,8 @@ namespace LoansTracking.WebApi.Models
             {
                 Id = model.Id,
                 AmountPaid = model.AmountPaid,
-                Date = model.Date,  
+                Date = model.Date,
+                Loan = context.Loans.Find(model.LoanId)
                 
             };
             payment.Loan = new Repository<Loan>(context).Get().Where(x => x.PersonLoanedTo.Id == model.PaidById).FirstOrDefault();

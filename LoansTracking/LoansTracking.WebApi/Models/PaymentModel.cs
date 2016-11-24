@@ -13,5 +13,6 @@ namespace LoansTracking.WebApi.Models
 
         public string PaidBy { get; set; }
         public int PaidById { get; set; }
+        public int LoanId;
     }
 }

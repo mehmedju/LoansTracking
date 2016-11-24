@@ -17,7 +17,7 @@ namespace LoansTracking.DB.Migrations
         {
 
             const string query = "insert into People ([FirstName], [LastName], [Gender],[DateOfBirth], [MobileNumber], [Address], [Location], [Company], [Occupation], [Email], [Password])" +
-                                    " values ('admin', 'administrator', 'Male', '1991-05-03', '061/483-003', 'Address', 'Sarajevo', 'Mistral', 'Developer', 'admin', 'password')";
+                                    " values ('admin', 'administrator', 'Male', '1991-05-03', '061/483-003', 'Address', 'Sarajevo', 'Mistral', 'Developer', 'admin', 'cGFzc3dvcmQ=')";
             Sql(query);
         }
 
