@@ -8,22 +8,19 @@
                 <tr>
                     <th>Date</th>
                     <th>Amount</th>
-                    <th class="th-center">Edit</th>
                     <th class="th-center">Delete</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="n in [].constructor(5) track by $index" class="{{$even ? 'success' : 'info'}}">
-                    <td>26.11.2016</td>
-                    <td>300</td>
-                    <td class="td-center"><button type="button" class="btn-edit"><i class="glyphicon glyphicon-pencil"></i></button></td>
-                    <td class="td-center"><button type="button" class="btn-delete"><i class="glyphicon glyphicon-remove"></i></button></td>
+                <tr ng-repeat="payment in payments track by $index" class="{{$even ? 'success' : 'info'}}">
+                    <td>{{payment.date | date:'MM/dd/yyyy'}}</td>
+                    <td>{{payment.amountPaid}}</td>
+                    <td class="td-center"><button type="button" class="btn-delete" ng-click="deletePayment(payment)"><i class="glyphicon glyphicon-remove"></i></button></td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-click="closeAllPaymentsModal()">OK</button>
         <button class="btn btn-warning" type="button" ng-click="closeAllPaymentsModal()">Cancel</button>
     </div>
 </div>

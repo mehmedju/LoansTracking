@@ -24,7 +24,7 @@ namespace LoansTracking.WebApi.Models
                 Amount = entity.Amount,
                 DueDate = entity.DueDate,
                 PaidOff = entity.PaidOff,
-                Status = entity.Amount - entity.Payments.Select(x => x.AmountPaid).DefaultIfEmpty(entity.Amount).Sum()               
+                Status = entity.Amount - entity.Payments.Select(x => x.AmountPaid).DefaultIfEmpty(0).Sum()               
             };
             foreach(var payment in entity.Payments)
             {
@@ -48,7 +48,8 @@ namespace LoansTracking.WebApi.Models
                 AmountPaid = entity.AmountPaid,
                 Date = entity.Date,
                 PaidBy = entity.Loan.PersonLoanedTo.FirstName,
-                PaidById = entity.Loan.PersonLoanedTo.Id
+                PaidById = entity.Loan.PersonLoanedTo.Id,
+                LoanId = entity.Loan.Id
             };
         }
 

@@ -3,16 +3,29 @@
         'use strict';
 
         angular.extend($scope, {
-            addMode: true,
+            addMode: false,
+            editMode:false,
             currentUser: authService.getCookie()
         });
-
-        loansService.getLoans().then(function (data) {
-            $scope.allLoans = data;
+        $scope.loadLoans = function () {
+            loansService.getLoans().then(function (data) {
+                $scope.allLoans = data;
+            });
+        }
+        $scope.loadLoans();
+        $scope.$on("reloadLoans", function () {
+            $scope.loadLoans();
         });
 
         $scope.addNewLoan = function () {
+            $scope.$broadcast("addNewLoan");
+            $scope.editMode = false;
             $scope.addMode = true;
+        }
+        $scope.editLoan = function (data) {
+            $scope.$broadcast("editLoan", data);
+            $scope.editMode = true;
+            $scope.addMode = false;
         }
     }
     ]));

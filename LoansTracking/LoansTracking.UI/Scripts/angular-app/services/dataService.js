@@ -14,7 +14,7 @@
 
         this.getById = function (url, id) {
             var deferred = $q.defer();
-            $http.get(url + id).
+            $http.get(url + '/' +id).
                 success(function (response) {
                     deferred.resolve(response);
                 }).error(function (err) {
@@ -42,10 +42,10 @@
             return deferred.promise;
         }
 
-        this.put = function (url, data) {
+        this.put = function (url, data,id) {
             var req = {
                 method: "PUT",
-                url: url,
+                url: url + '/'+ id,
                 header: {
                     "Content-Type": "application/json"
                 },
@@ -63,7 +63,7 @@
 
         this.delete = function (url, id) {
             var deferred = $q.defer();
-            $http.delete(url + id).
+            $http.delete(url +'/'+ id).
                 success(function (response) {
                     deferred.resolve(response);
                 }).error(function (err) {

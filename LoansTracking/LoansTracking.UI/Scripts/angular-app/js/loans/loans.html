@@ -8,16 +8,18 @@
                     <tr>
                         <th>Name</th>
                         <th>Surname</th>
+                        <th>Amount</th>
                         <th>Status</th>
                         <th>Due date</th>
                     </tr>
                 </thead>
                 <tbody>
                 <tr data-ng-repeat="loan in allLoans" data-ng-click="editLoan(loan)">
-                    <td>{{loan.name}}</td>
-                    <td>{{loan.surname}}</td>
+                    <td>{{loan.personLoanedToName}}</td>
+                    <td>{{loan.personLoanedToSurname}}</td>
+                    <td>{{loan.amount}}</td>
                     <td>{{loan.status}}</td>
-                    <td>{{loan.dueDate}}</td>
+                    <td>{{loan.dueDate | date : 'LLLL dd yyyy'}}</td>
                 </tr>
                 </tbody>
             </table>
