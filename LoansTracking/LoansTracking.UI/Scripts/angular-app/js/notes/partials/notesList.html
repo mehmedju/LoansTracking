@@ -1,14 +1,34 @@
-﻿<table class="custom-responsive-table table-striped" style="cursor: pointer">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Note</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr data-ng-repeat="note in allNotes | filter:{title:search}" data-ng-click="editNote(note)">
-            <td>{{note.title}}</td>
-            <td>{{note.note}}</td>
-        </tr>
-    </tbody>
-</table>
+﻿<div id="notesList" data-ng-controller="notesListController">
+    <table class="custom-responsive-table table-striped" style="cursor: pointer">
+        <thead>
+            <tr>
+                <th class="col-md-4">Title</th>
+                <th class="col-md-4">Note</th>
+                <th class="col-md-2">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="note in allNotes | filter:{title:search}">
+                <td ng-hide="checkEdit(note)">{{note.title}}</td>
+                <td ng-hide="checkEdit(note)">{{note.text}}</td>
+
+                <td ng-show="checkEdit(note)"><input ng-model="note.title" value={{note.title}}></td>
+                <td ng-show="checkEdit(note)"><input ng-model="note.text" value="{{note.text}}"></td>
+
+                <td>
+                    <button ng-hide="checkActions(note)" class="btn btn-default btn-sm" ng-click="editOn(note)"><i class="fa fa-pencil-square-o"></i></button>
+                    <button ng-hide="checkActions(note)" class="btn btn-default btn-sm" ng-click="removeOn(note)"><i class="fa fa-times"></i></button>
+                    <!--on edit-->
+                    <button ng-show="checkEdit(note)" class="btn btn-default btn-sm" ng-click="editOff()"><strong>Cancel</strong></button>
+                    <button ng-show="checkEdit(note)" class="btn btn-success btn-sm" ng-click="updateNote(note)"><strong>Submit</strong></button>
+                    <!--end on edit-->
+
+                    <!--on remove-->
+                    <button ng-show="checkRemove(note)" class="btn btn-default btn-sm" ng-click="removeOff()"><strong>Cancel</strong></button>
+                    <button ng-show="checkRemove(note)" class="btn btn-danger btn-sm" ng-click="removeNote(note)"><strong>Remove</strong></button>
+                    <!--end on remove-->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -59,6 +59,7 @@ namespace LoansTracking.WebApi.Models
             return new Note()
             {
                 Id = model.Id,
+                Person = context.People.Find(model.Id),
                 Title = model.Title,
                 Text = model.Text
             };
