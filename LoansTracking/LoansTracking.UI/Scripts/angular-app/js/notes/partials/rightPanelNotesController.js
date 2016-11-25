@@ -1,16 +1,21 @@
 ﻿(angular.module('app')
-    .controller('rightPanelNotesController', ['$scope', '$uibModal', 'notesService', function ($scope, $uibModal, notesService) {
+    .controller('rightPanelNotesController', ['$scope', '$uibModal', 'notesService', 'authService', function ($scope, $uibModal, notesService, authService) {
         'use strict';
 
-        $scope.createNote = function () {
-            $scope.newNote = {
-                id: $scope.currentUser,
-                title: $scope.note.title,
-                text: $scope.note.note,
-            };
-            notesService.createNotes($scope.newNote);
-            window.location.reload();
+        
+        $scope.$on("addNewNote", function (ev, args) {
+            $scope.note = {};
+            $scope.addMode = true;
+        });
+        $scope.addNote = function (note) {
+            note.id = authService.getCookie();
+            notesService.createNotes(note).then(function (data) {
+                $scope.addMode = false;
+                $scope.note = {};
+                $scope.$emit("reloadNotes");
+            });
         };
-       
+
+        $scope.$emit("reloadNotes");
     }
     ]));
