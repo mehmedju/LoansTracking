@@ -3,72 +3,80 @@
         'use strict';
 
         angular.extend($scope, {
-            addMode: true,
-            currentUser: authService.getCookie()
+            addMode: false,
+            currentUser: authService.getCookie(),
+            editOnId: null,
+            removeOnId: null,
+            newNote: {
+                id: null,
+                title: "",
+                text: "",
+            }
         });
-        
-        notesService.getNotes().then(function (data) {
-            $scope.allNotes = data;
-        });  
 
+        $scope.loadNotes = function () {
+            notesService.getNotes(authService.getCookie()).then(function (data) {
+                $scope.allNotes = data;
+            });
+        }
+
+        $scope.loadNotes();
+
+        $scope.$on("reloadNotes", function () {
+            $scope.loadNotes();
+        });
         $scope.addNewNote = function () {
+            $scope.$broadcast("addNewNote");
             $scope.addMode = true;
-        }
-
-        $scope.editOnId;
-        $scope.removeOnId;
-        $scope.newNote = {
-            id: null,
-            title: "",
-            text: "",
-        }
-        $scope.updateNote = function (note) {
-            notesService.updateNote(note, note.id);
-            notesService.getNotes();
+            setTimeout($scope.$emit("reloadNotes"), 500);
         };
 
+        $scope.updateNote = function (note) {
+            $scope.editOff();
+            notesService.updateNote(note, note.id);
+            setTimeout($scope.$emit("reloadNotes"),500);
+        };
         $scope.removeNote = function (note) {
             notesService.deleteNote(note.id);
-            notesService.getNotes();
+            setTimeout($scope.$emit("reloadNotes"), 500);
         };
 
-        $scope.editOn = function (note) {
-            $scope.removeOff();
-        }
 
+
+//Edit and remove buttons
         $scope.editOn = function (note) {
             $scope.removeOff();
             $scope.editOnId = note.id;
             $scope.newNote = note;
+            $scope.$emit("reloadNotes");
         }
-
         $scope.editOff = function () {
             $scope.editOnId = null;
             $scope.newNote = null;
+            $scope.$emit("reloadNotes");
         }
-
         $scope.checkEdit = function (note) {
             return $scope.editOnId === note.id;
         }
-
         $scope.removeOn = function (note) {
             $scope.editOff();
             $scope.removeOnId = note.id;
             $scope.newNote = note;
+            $scope.$emit("reloadNotes");
         }
         $scope.removeOff = function () {
             $scope.removeOnId = null;
             $scope.newNote = null;
+            $scope.$emit("reloadNotes");
         }
         $scope.checkRemove = function (note) {
             return $scope.removeOnId === note.id;
         }
-
         $scope.checkActions = function (note) {
             return $scope.checkEdit(note) || $scope.checkRemove(note);
         }
 
-        notesService.getNotes();
-        
+
+        $scope.$emit("reloadNotes");
     }
     ]));
