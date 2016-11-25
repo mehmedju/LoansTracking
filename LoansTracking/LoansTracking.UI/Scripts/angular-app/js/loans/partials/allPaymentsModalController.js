@@ -5,7 +5,9 @@
         $scope.loan = data;
         $scope.payments = $scope.loan.payments;
     };
+
     $scope.reloadLoan(loan);
+
     $scope.deletePayment = function (payment) {
         paymentsService.deletePayment(payment.id).then(function (data) {
             loansService.getLoansById($scope.loan.id).then(function (data) {
