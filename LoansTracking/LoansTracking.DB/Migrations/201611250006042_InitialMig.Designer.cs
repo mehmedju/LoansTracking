@@ -7,13 +7,13 @@ namespace LoansTracking.DB.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class SeedMigration : IMigrationMetadata
+    public sealed partial class InitialMig : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SeedMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMig));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611140752264_SeedMigration"; }
+            get { return "201611250006042_InitialMig"; }
         }
         
         string IMigrationMetadata.Source
