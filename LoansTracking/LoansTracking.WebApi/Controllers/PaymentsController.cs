@@ -24,7 +24,7 @@ namespace LoansTracking.WebApi.Controllers
                               
                 Repository.Insert(payment);
                                 
-                if (loan.Status <= 0)
+                if (loan.Status-payment.AmountPaid <= 0)
                 {
                     loan.PaidOff = true;
                     new Repository<Loan>(Repository.BaseContext()).Update(Parser.Create(loan, Repository.BaseContext()), loan.Id);

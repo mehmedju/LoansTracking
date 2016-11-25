@@ -1,8 +1,8 @@
 ﻿(angular.module('app')
     .service('loansService', function (dataService) {
 
-        this.getLoans = function () {
-            return dataService.get(loansUrl);
+        this.getLoans = function (id) {
+            return dataService.getById(allLoansUrl,id);
         };
 
         this.getLoansById = function (id) {
@@ -10,6 +10,7 @@
         };
 
         this.createLoans = function (data) {
+            console.log("data", data);
             return dataService.post(loansUrl, data);
         };
 

@@ -8,7 +8,7 @@
             currentUser: authService.getCookie()
         });
         $scope.loadLoans = function () {
-            loansService.getLoans().then(function (data) {
+            loansService.getLoans(authService.getCookie()).then(function (data) {
                 $scope.allLoans = data;
             });
         }

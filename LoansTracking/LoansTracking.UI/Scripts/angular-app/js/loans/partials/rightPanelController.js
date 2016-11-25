@@ -1,5 +1,5 @@
 ﻿(angular.module('app')
-    .controller('rightPanelController', ['$scope', '$uibModal', 'loansService', 'paymentsService', function ($scope, $uibModal, loansService, paymentsService) {
+    .controller('rightPanelController', ['$scope', '$uibModal', 'loansService', 'paymentsService', 'authService', function ($scope, $uibModal, loansService, paymentsService, authService) {
         'use strict';
         
         $scope.openDatepicker1 = function () {
@@ -29,6 +29,7 @@
         });
 
         $scope.addLoan = function (loan) {
+            loan.personLoanedFrom = authService.getCookie();
             loansService.createLoans(loan).then(function (data) {
                 $scope.addMode = false;
                 $scope.loan = {};
@@ -74,7 +75,8 @@
                     loan:data
                 }
             }).result.then(function (result) {
-                console.log("here");
+                
+            },function () {
                 $scope.$emit("reloadLoans");
             });
         };

@@ -31,12 +31,13 @@ namespace LoansTracking.WebApi.Controllers
                 return BadRequest(ex.Message.ToString());
             }
         }
-
-        public IHttpActionResult Get()
+        [Route("api/all/loans/{id}")]
+        [HttpGet]
+        public IHttpActionResult Get(int id)
         {
             try
             {
-                return Ok(Repository.Get().Where(x => !x.PaidOff).ToList().Select(x => Factory.Create(x)).ToList());
+                return Ok(Repository.Get().Where(x => !x.PaidOff && x.PersonLoanedFrom.Id == id).ToList().Select(x => Factory.Create(x)).ToList());
             }
             catch (Exception ex)
             {
@@ -47,10 +48,8 @@ namespace LoansTracking.WebApi.Controllers
         public IHttpActionResult Post(LoanModel model)
         {
             try
-            {   //TO DO get username from cookie
-                Repository<Person> peopleRepo = new Repository<Person>(Repository.BaseContext());
-                model.PersonLoanedFrom = peopleRepo.Get().Where(x => x.Email == "admin").Select(x => x.Id).FirstOrDefault();
-                
+            {   
+               
                 if(Repository.Get().Where(x => x.PersonLoanedTo.FirstName == model.PersonLoanedToName && x.PersonLoanedTo.LastName == model.PersonLoanedToSurname).FirstOrDefault() == null)
                 {
                     new Repository<Person>(Repository.BaseContext()).Insert(new Person()
