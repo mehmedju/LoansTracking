@@ -779,6 +779,20 @@ textarea {
     resize: vertical;
 }
 
+.signup-class {
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #a0b3b0;
+    color: #ffffff;
+    border-radius: 0;
+    -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+}
+
 .field-wrap {
     position: relative;
     margin-bottom: 40px;
