@@ -48,9 +48,8 @@ namespace LoansTracking.WebApi.Controllers
         public IHttpActionResult Post(LoanModel model)
         {
             try
-            {   
-               
-                if(Repository.Get().Where(x => x.PersonLoanedTo.FirstName == model.PersonLoanedToName && x.PersonLoanedTo.LastName == model.PersonLoanedToSurname).FirstOrDefault() == null)
+            {
+                if (Repository.Get().Where(x => x.PersonLoanedTo.FirstName == model.PersonLoanedToName && x.PersonLoanedTo.LastName == model.PersonLoanedToSurname).FirstOrDefault() == null)
                 {
                     new Repository<Person>(Repository.BaseContext()).Insert(new Person()
                     {
@@ -60,7 +59,11 @@ namespace LoansTracking.WebApi.Controllers
                         Email = model.PersonLoanedToName + "test",
                         Password = "dGVzdA=="
                     });
-                    model.PersonLoanedTo = new Repository<Person>(Repository.BaseContext()).Get().Where(x => x.FirstName == model.PersonLoanedToName && x.LastName == model.PersonLoanedToSurname).Select(x => x.Id).FirstOrDefault();
+                }
+                model.PersonLoanedTo = new Repository<Person>(Repository.BaseContext()).Get().Where(x => x.FirstName == model.PersonLoanedToName && x.LastName == model.PersonLoanedToSurname).Select(x => x.Id).FirstOrDefault();
+                var sameLoans = Repository.Get().Where(x => x.PersonLoanedFrom.Id == model.PersonLoanedFrom && x.PersonLoanedTo.Id == model.PersonLoanedTo && !x.PaidOff).FirstOrDefault();
+                if (sameLoans == null)
+                {
                     Loan Loan = Parser.Create(model, Repository.BaseContext());
                     Repository.Insert(Loan);
                     var newLoan = Repository.Get().OrderByDescending(x => x.Id).FirstOrDefault();
