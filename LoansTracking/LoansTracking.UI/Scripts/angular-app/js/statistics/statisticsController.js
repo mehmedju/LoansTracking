@@ -10,10 +10,12 @@
         statisticsService.getTotalStatistics($scope.currentUser).then(function (data) {
             $scope.totalActive = data.totalActive;
             $scope.totalPaidOff = data.totalPaidOff;
+            statisticsService.getPaidStatistics($scope.currentUser).then(function (data) {
+                notificationsConfig.success("Statistics loaded successfully ");
+                $scope.allStatistics = data;
+            });
         });
 
-        statisticsService.getPaidStatistics($scope.currentUser).then(function (data) {
-            $scope.allStatistics = data;
-        });
+        
     }
     ]));

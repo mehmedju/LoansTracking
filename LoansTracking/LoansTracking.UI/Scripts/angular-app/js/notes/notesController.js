@@ -16,6 +16,7 @@
 
         $scope.loadNotes = function () {
             notesService.getNotes(authService.getCookie()).then(function (data) {
+                notificationsConfig.success("Notes loaded successfully");
                 $scope.allNotes = data;
             });
         }
@@ -32,11 +33,13 @@
         };
 
         $scope.updateNote = function (note) {
+            notificationsConfig.success("Notes updated successfully");
             $scope.editOff();
             notesService.updateNote(note, note.id);
             setTimeout($scope.$emit("reloadNotes"),500);
         };
         $scope.removeNote = function (note) {
+            notificationsConfig.success("Notes deleted successfully");
             notesService.deleteNote(note.id);
             setTimeout($scope.$emit("reloadNotes"), 500);
         };

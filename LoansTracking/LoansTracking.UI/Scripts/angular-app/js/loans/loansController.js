@@ -1,15 +1,27 @@
 ﻿(angular.module('app')
-    .controller('loansController', ['$scope', 'loansService', 'authService', function ($scope, loansService, authService) {
+    .controller('loansController', ['$scope','loansService', 'authService', function ($scope, loansService, authService) {
         'use strict';
 
         angular.extend($scope, {
             addMode: false,
             editMode:false,
-            currentUser: authService.getCookie()
+            currentUser: authService.getCookie(),
+            loanShowSuccess:true
         });
         $scope.loadLoans = function () {
             loansService.getLoans(authService.getCookie()).then(function (data) {
-                $scope.allLoans = data;
+                if (data.length === 0 && $scope.loanShowSucees) {
+                    
+                    notificationsConfig.success("There are no active loans ");
+                }
+                else {
+                    $scope.allLoans = data;
+                    if ($scope.loanShowSuccess) {
+                        $scope.loanShowSuccess = false;
+                        notificationsConfig.success("Loans loaded successfully ");
+                       
+                    }                 
+                }
             });
         }
         $scope.loadLoans();

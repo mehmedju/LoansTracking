@@ -31,6 +31,7 @@
         $scope.addLoan = function (loan) {
             loan.personLoanedFrom = authService.getCookie();
             loansService.createLoans(loan).then(function (data) {
+                notificationsConfig.success("Loan added successfully");
                 $scope.addMode = false;
                 $scope.loan = {};
                 $scope.$emit("reloadLoans");
@@ -39,6 +40,7 @@
 
         $scope.deleteLoan = function(id){
             loansService.deleteLoan(id).then(function (data) {
+                notificationsConfig.success("Loan deleted successfully");
                 $scope.addMode = false;
                 $scope.editMode = false;
                 $scope.loan = {};
@@ -46,8 +48,8 @@
             });
         }
         $scope.editLoan = function (data) {
-            console.log("here I am")
-            loansService.updateLoan(data,data.id).then(function (data) {
+            loansService.updateLoan(data, data.id).then(function (data) {
+                notificationsConfig.success("Loan updated successfully");
                 $scope.addMode = false;
                 $scope.editMode = false;
                 $scope.loan = {};
@@ -58,6 +60,7 @@
         $scope.addPayment = function (payment) {
             payment.loanId = $scope.loan.id;
             paymentsService.createPayments(payment).then(function (data) {
+                notificationsConfig.success("Payment added successfully");
                 $scope.showPayment = false;
                 $scope.payment = {};
                 loansService.getLoansById($scope.loan.id).then(function (data) {

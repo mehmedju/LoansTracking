@@ -26,6 +26,7 @@
             if ($scope.confirmPassword != user.password) $scope.showErrorMessage = true;
             else {
                 signupService.signup(user).then(function (data) {
+                    notificationsConfig.success("Account created successfully ");
                     $location.path('/login');
                 });
             }   

@@ -10,6 +10,7 @@
 
     $scope.deletePayment = function (payment) {
         paymentsService.deletePayment(payment.id).then(function (data) {
+            notificationsConfig.success("Payment deleted successfully");
             loansService.getLoansById($scope.loan.id).then(function (data) {
                 $scope.reloadLoan(data);
             });

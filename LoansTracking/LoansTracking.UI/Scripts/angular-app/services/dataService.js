@@ -6,7 +6,8 @@
             $http.get(url).
                 success(function (response, status) {
                     deferred.resolve(response);
-                }).error(function (err) {
+                }).error(function (error) {
+                    notificationsConfig.error(error.message);
                     deferred.reject(err);
                 });
             return deferred.promise;
@@ -17,7 +18,8 @@
             $http.get(url + '/' +id).
                 success(function (response) {
                     deferred.resolve(response);
-                }).error(function (err) {
+                }).error(function (error) {
+                    notificationsConfig.error(error.message);
                     deferred.reject(err);
                 });
             return deferred.promise;
@@ -37,6 +39,7 @@
                 deferred.resolve(result);
             })
             .error(function (error) {
+                notificationsConfig.error(error.message);
                 deferred.reject(error);
             });
             return deferred.promise;
@@ -56,6 +59,7 @@
                 deferred.resolve(result);
             })
             .error(function (error) {
+                notificationsConfig.error(error.message);
                 deferred.reject(error);
             });
             return deferred.promise;
@@ -66,7 +70,8 @@
             $http.delete(url +'/'+ id).
                 success(function (response) {
                     deferred.resolve(response);
-                }).error(function (err) {
+                }).error(function (error) {
+                    notificationsConfig.error(error.message);
                     deferred.reject(err);
                 });
             return deferred.promise;

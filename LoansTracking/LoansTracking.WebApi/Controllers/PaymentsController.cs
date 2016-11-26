@@ -38,7 +38,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Payment could not be saved");
             }
         }
 
@@ -49,7 +49,7 @@ namespace LoansTracking.WebApi.Controllers
                 Payment payment = Repository.Get(id);
                 if (payment == null)
                 {
-                    return NotFound();
+                    return BadRequest("Payment not found");
                 }
                 else
                 {
@@ -72,7 +72,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Payment could not be updated");
             }
         }
 
@@ -83,7 +83,7 @@ namespace LoansTracking.WebApi.Controllers
                 Payment payment = Repository.Get(id);
                 if (payment == null)
                 {
-                    return NotFound();
+                    return BadRequest("Payment not found");
                 }
                 else
                 {
@@ -94,7 +94,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Payment could not be deleted");
             }
         }
     }

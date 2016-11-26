@@ -21,6 +21,7 @@
         };
 
         $scope.updateProfile = function (user, id) {
+            notificationsConfig.success("Profile edited successfully");
             profileService.updateProfile(user, id);
             $scope.successful = true;
         };

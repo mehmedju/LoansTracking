@@ -101,6 +101,7 @@
     </Content>
     <Content Include="Scripts\angular-app\controllers\mainController.js" />
     <Content Include="Scripts\angular-app\controllers\headerController.js" />
+    <Content Include="Scripts\angular-app\css\toastr.css" />
     <Content Include="Scripts\angular-app\css\ui-bootstrap-csp.css" />
     <Content Include="Scripts\angular-app\img\city.jpg" />
     <Content Include="Scripts\angular-app\js\loans\loans.html" />
@@ -129,6 +130,7 @@
     <Content Include="Scripts\angular-app\services\authService.js" />
     <Content Include="Scripts\angular-app\services\dataService.js" />
     <Content Include="Scripts\angular-app\tests\mainControllerTests\mainControllerTests.js" />
+    <Content Include="Scripts\config\notifications-config.js" />
     <Content Include="Scripts\lib\angular-cookies.min.js" />
     <Content Include="Scripts\config\config.js" />
     <Content Include="Scripts\lib\angular-route.min.js.map" />
@@ -138,6 +140,7 @@
     <Content Include="Scripts\lib\jasmine.css" />
     <Content Include="Scripts\lib\jasmine.js" />
     <Content Include="Scripts\lib\jquery.min.js" />
+    <Content Include="Scripts\lib\toastr.js" />
     <Content Include="Scripts\lib\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\lib\ui-bootstrap-tpls.min.js" />
     <Content Include="Scripts\lib\ui-bootstrap.js" />
