@@ -51,7 +51,6 @@ namespace LoansTracking.WebApi.Models
                 Loan = context.Loans.Find(model.LoanId)
                 
             };
-            payment.Loan = new Repository<Loan>(context).Get().Where(x => x.PersonLoanedTo.Id == model.PaidById).FirstOrDefault();
             return payment;
         }
 

@@ -13,12 +13,10 @@
             notificationsConfig.success("Payment deleted successfully");
             loansService.getLoansById($scope.loan.id).then(function (data) {
                 $scope.reloadLoan(data);
-            });
-            
-       
+            });      
         });
     }
     $scope.closeAllPaymentsModal = function () {
-        $uibModalInstance.close();
+        $uibModalInstance.close(true);
     };
 }]);

@@ -11,12 +11,14 @@
                 id: null,
                 title: "",
                 text: "",
-            }
+            }         
         });
 
         $scope.loadNotes = function () {
             notesService.getNotes(authService.getCookie()).then(function (data) {
-                notificationsConfig.success("Notes loaded successfully");
+                if (!$scope.allNotes) {
+                    notificationsConfig.success("Notes loaded successfully");
+                };               
                 $scope.allNotes = data;
             });
         }
@@ -80,6 +82,6 @@
         }
 
 
-        $scope.$emit("reloadNotes");
+       $scope.$emit("reloadNotes");
     }
     ]));

@@ -78,9 +78,12 @@
                     loan:data
                 }
             }).result.then(function (result) {
-                
-            },function () {
-                $scope.$emit("reloadLoans");
+                if (result) {
+                    loansService.getLoansById($scope.loan.id).then(function (data) {
+                        $scope.loan = data;
+                    });
+                    $scope.$emit("reloadLoans");
+                }
             });
         };
     }])
