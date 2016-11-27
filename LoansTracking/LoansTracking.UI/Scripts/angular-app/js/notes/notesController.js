@@ -12,15 +12,17 @@
                 title: "",
                 text: ""
             },
-            allNotes: []
+            allNotes: [],
+            showLoaded:true
 
         });
 
         $scope.loadNotes = function () {
             notesService.getNotes(authService.getCookie()).then(function (data) {
-                if (!$scope.allNotes) {
+                if ($scope.showLoaded) {
                     notificationsConfig.success("Notes loaded successfully");
-                };               
+                    $scope.showLoaded = false;
+                };
                 $scope.allNotes = data;
             });
         }
@@ -29,8 +31,6 @@
             $scope.addMode = true;
             $scope.$broadcast("addNewNote", { mode: $scope.addMode });
         };
-
         $scope.loadNotes();
-
     }
     ]));

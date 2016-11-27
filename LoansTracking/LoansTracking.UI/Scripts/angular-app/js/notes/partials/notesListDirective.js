@@ -12,12 +12,14 @@
                 scope.updateNote = function (note) {
                     scope.editOff();
                     notesService.updateNote(note, note.id).then(function () {
+                        notificationsConfig.success("Note updated successfully");
                         refreshData();
                     });
                 };
 
                 scope.removeNote = function (note) {
                     notesService.deleteNote(note.id).then(function () {
+                        notificationsConfig.success("Note deleted successfully");
                         refreshData();
                     });
                 };
