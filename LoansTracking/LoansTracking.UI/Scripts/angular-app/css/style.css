@@ -561,6 +561,7 @@ td.uib-day button.active {
 table.custom-responsive-table {
     width: 100%;
     border-collapse: collapse;
+    font-size: 14px;
 }
 
 .add-loan-btn {
@@ -593,7 +594,7 @@ table.custom-responsive-table {
 }
 
 .custom-responsive-table th {
-    background: #333;
+    background: #337ab7;
     color: white;
     font-weight: bold;
 }
@@ -780,7 +781,7 @@ textarea {
 }
 
 .signup-class {
-    font-size: 22px;
+    font-size: 14px;
     display: block;
     width: 100%;
     height: 100%;

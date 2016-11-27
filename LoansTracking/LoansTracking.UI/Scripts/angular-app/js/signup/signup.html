@@ -1,6 +1,6 @@
-<div class="sign-up container">
+<div class="sign-up container" style="width: 530px;">
     <div class="row">
-        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3" style="width: 80%; margin-left: 10%; margin-right: 10%;">
             <form role="form">
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
@@ -13,56 +13,7 @@
                             <input type="text" class="input signup-class" placeholder="Last name" name="lastName" autocomplete="off" required="required" data-ng-model="user.lastName">
                         </div>
                     </div>
-                </div>
-                <div class="row" style="height:53px;">
-                    <div class="form-group">
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <input type="text" id="dateOfBirth" placeholder="Date of Birth" name="dateOfBirth" class="input signup-class" uib-datepicker-popup="{{format}}" data-ng-model="user.dateOfBirth" is-open="birthDate.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" required="required" />
-                        </div>
-                        <div class="col-xs-2 col-sm-2 col-md-2">
-                            <span>
-                                <button type="button" class="btn btn-default input" ng-click="openBirthDate()"><i class="glyphicon glyphicon-calendar"></i></button>
-                            </span>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <select id="user_gender" class="dropdown signup-class" data-ng-model="user.gender" required="required">
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="height:53px;">
-                    <div class="form-group">
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <input type="text" class="input signup-class" placeholder="Mobile number" name="mobileNumber" autocomplete="off" required="required" data-ng-model="user.mobileNumber">
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="height:53px;">
-                    <div class="form-group">
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <input type="text" class="input signup-class" placeholder="Address" name="address" autocomplete="off" required="required" data-ng-model="user.address">
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <input type="text" class="input signup-class" placeholder="Location" name="location" autocomplete="off" required="required" data-ng-model="user.location">
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="height:53px;">
-                    <div class="form-group">
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <input type="text" class="input signup-class" placeholder="Company" name="company" autocomplete="off" required="required" data-ng-model="user.company">
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <input type="text" class="input signup-class" placeholder="Occupation" name="occupation" autocomplete="off" required="required" data-ng-model="user.occupation">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <hr />
-                </div>
+                </div>s
                 <div class="row" style="height:53px;">
                     <div class="form-group">
                         <div class="col-xs-12 col-sm-12 col-md-12">
