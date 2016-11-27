@@ -10,7 +10,6 @@
         };
 
         this.createLoans = function (data) {
-            console.log("data", data);
             return dataService.post(loansUrl, data);
         };
 

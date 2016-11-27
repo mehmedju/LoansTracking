@@ -30,7 +30,7 @@ namespace LoansTracking.WebApi.Controllers
             if (isMember)
                 return Ok(id);
             else
-                return BadRequest();
+                return BadRequest("Incorrect username or password");
         }
     }
 }

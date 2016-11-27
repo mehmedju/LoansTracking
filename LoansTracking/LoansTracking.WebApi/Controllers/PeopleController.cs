@@ -22,7 +22,7 @@ namespace LoansTracking.WebApi.Controllers
                 Person person = Repository.Get(id);
                 if (person == null)
                 {
-                    return NotFound();
+                    return BadRequest("Person not found");
                 }
                 else
                 {
@@ -31,7 +31,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Something went wrong");
             }
         }
 
@@ -43,7 +43,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("People could not be loaded");
             }
         }
 
@@ -61,7 +61,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Person could not be saved");
             }
         }
 
@@ -72,7 +72,7 @@ namespace LoansTracking.WebApi.Controllers
                 Person person = Repository.Get(id);
                 if (person == null)
                 {
-                    return NotFound();
+                    return BadRequest("Person not found");
                 }
                 else
                 {
@@ -85,7 +85,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Person could not be updated");
             }
         }
 
@@ -96,7 +96,7 @@ namespace LoansTracking.WebApi.Controllers
                 Person person = Repository.Get(id);
                 if (person == null)
                 {
-                    return NotFound();
+                    return BadRequest("Person not found");
                 }
                 else
                 {
@@ -106,7 +106,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Person could not be deleted");
             }
         }
     }

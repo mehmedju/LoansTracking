@@ -28,7 +28,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Statistics could not be loaded");
             }
         }
 
@@ -51,7 +51,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Statistics could not be loaded");
             }
         }
     }

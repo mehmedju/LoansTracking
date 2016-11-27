@@ -13,10 +13,14 @@
                 text: ""
             },
             allNotes: []
+
         });
 
         $scope.loadNotes = function () {
             notesService.getNotes(authService.getCookie()).then(function (data) {
+                if (!$scope.allNotes) {
+                    notificationsConfig.success("Notes loaded successfully");
+                };               
                 $scope.allNotes = data;
             });
         }
@@ -27,5 +31,6 @@
         };
 
         $scope.loadNotes();
+
     }
     ]));

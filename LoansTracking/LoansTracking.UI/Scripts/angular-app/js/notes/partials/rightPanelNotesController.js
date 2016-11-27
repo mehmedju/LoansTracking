@@ -4,7 +4,8 @@
 
         $scope.addNote = function (note) {
             note.id = authService.getCookie();
-            notesService.createNotes(note).then(function () {
+            notesService.createNotes(note).then(function (data) {
+                notificationsConfig.success("Note added successfully");
                 $scope.addMode = false;
                 $scope.note = {};
                 $scope.loadNotes();

@@ -18,7 +18,7 @@ namespace LoansTracking.WebApi.Controllers
                 Note note = Repository.Get(id);
                 if (note == null)
                 {
-                    return NotFound();
+                    return BadRequest("Note not found");
                 }
                 else
                 {
@@ -27,7 +27,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Something went wrong!");
             }
         }
 
@@ -39,7 +39,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Notes could not be loaded");
             }
         }
 
@@ -54,7 +54,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Note could not be saved");
             }
         }
 
@@ -65,7 +65,7 @@ namespace LoansTracking.WebApi.Controllers
                 Note note = Repository.Get(id);
                 if (note == null)
                 {
-                    return NotFound();
+                    return BadRequest("Note not found");
                 }
                 else
                 {
@@ -75,7 +75,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Note could not be updated");
             }
         }
 
@@ -86,7 +86,7 @@ namespace LoansTracking.WebApi.Controllers
                 Note note = Repository.Get(id);
                 if (note == null)
                 {
-                    return NotFound();
+                    return BadRequest("Note not found");
                 }
                 else
                 {
@@ -96,7 +96,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Note could not be deleted");
             }
         }
     }

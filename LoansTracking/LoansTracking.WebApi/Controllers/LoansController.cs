@@ -19,7 +19,7 @@ namespace LoansTracking.WebApi.Controllers
                 Loan loan = Repository.Get(id);
                 if (loan == null)
                 {
-                    return NotFound();
+                    return BadRequest("Loan not found");
                 }
                 else
                 {
@@ -28,7 +28,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch(Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Something went wrong !");
             }
         }
         [Route("api/all/loans/{id}")]
@@ -37,11 +37,12 @@ namespace LoansTracking.WebApi.Controllers
         {
             try
             {
-                return Ok(Repository.Get().Where(x => !x.PaidOff && x.PersonLoanedFrom.Id == id).ToList().Select(x => Factory.Create(x)).ToList());
+                var loans = Repository.Get().Where(x => !x.PaidOff && x.PersonLoanedFrom.Id == id).ToList().Select(x => Factory.Create(x)).ToList();
+                return Ok(loans);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Loans could not be loaded");
             }
         }
 
@@ -76,7 +77,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Loan could not be saved");
             }
         }
 
@@ -87,7 +88,7 @@ namespace LoansTracking.WebApi.Controllers
                 Loan loan = Repository.Get(id);
                 if (loan == null)
                 {
-                    return NotFound();
+                    return BadRequest("Loan not found");
                 }
                 else
                 {
@@ -115,7 +116,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Loan could not be updated");
             }
         }
 
@@ -126,7 +127,7 @@ namespace LoansTracking.WebApi.Controllers
                 Loan loan = Repository.Get(id);
                 if (loan == null)
                 {
-                    return NotFound();
+                    return BadRequest("Loan not found");
                 }                   
                 else
                 {
@@ -142,7 +143,7 @@ namespace LoansTracking.WebApi.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message.ToString());
+                return BadRequest("Loan could not be deleted");
             }
         }
     }
