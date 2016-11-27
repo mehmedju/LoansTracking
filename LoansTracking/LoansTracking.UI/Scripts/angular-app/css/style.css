@@ -741,7 +741,7 @@ h1 {
     margin: 0 0 40px;
 }
 
-label {
+/*label {
     position: absolute;
     -webkit-transform: translateY(6px);
     transform: translateY(6px);
@@ -752,9 +752,9 @@ label {
     -webkit-backface-visibility: hidden;
     pointer-events: none;
     font-size: 22px;
-}
+}*/
 
-    label .req {
+    /*label .req {
         margin: 2px;
         color: #1ab188;
     }
@@ -772,7 +772,7 @@ label {
 
     label.highlight {
         color: #ffffff;
-    }
+    }*/
 
 textarea {
     border: 2px solid #a0b3b0;

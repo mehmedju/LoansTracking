@@ -1,7 +1,7 @@
 ﻿<div ng-show="addMode" data-ng-controller="rightPanelNotesController">
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 notesModeContent rightPanel">
         <span ng-show="addMode" class="modeTitle">Add New Note</span>
-        <form novalidate role="form" name="form">
+        <form novalidate role="form" name="form" style="margin-top: 10px">
             <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Enter a title" required ng-minlength="3" ng-model="note.title">

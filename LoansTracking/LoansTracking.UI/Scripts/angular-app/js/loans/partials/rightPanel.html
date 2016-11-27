@@ -16,14 +16,16 @@
         </div>
         <div class="form-inline">
             <div class="form-group">
+                <label for="surname" style="float: left">Amount:</label><br/>
                 <input type="number" class="form-control" placeholder="Enter an amount" style="max-width: 150px;" name="amount" required ng-model="loan.amount">
             </div>
             <div class="form-group">
-                <input type="text" name="date1" class="form-control" uib-datepicker-popup="{{format}}" ng-model="loan.dueDate" value={{loan.dueDate}} is-open="datepicker1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" style="max-width: 100px;" />
-            </div>
+                <label for="surname">Due date:</label><br/>
+                <input type="text" name="date1" class="form-control" uib-datepicker-popup="{{format}}" ng-model="loan.dueDate" value={{loan.dueDate}} is-open="datepicker1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" style="max-width: 164px;"/>
+             </div>
             <div class="form-group">
                 <span>
-                    <button type="button" class="btn btn-default btn-raised" ng-click="openDatepicker1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    <button type="button" class="btn btn-default btn-raised" ng-click="openDatepicker1()" style="margin-top: 6px"><i class="glyphicon glyphicon-calendar"></i></button>
                 </span>
             </div>
             <p ng-show="paymentForm.amount.$touched && paymentForm.amount.$error.required" class="text-danger">Amount is required!</p>
